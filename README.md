@@ -1,5 +1,4 @@
 ## tech-interview
----
 <details>
 <summary><a href="./answers/"><strong>📈 Math</strong></a></summary>
 
@@ -515,6 +514,5 @@ np.mean(cross_val_score(RidgeCV(), boston.data, boston.target, scoring='mean_squ
 </details>
 
 ## Reference
----
 - [BoostDevs님의 ai-tech-interview](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/README.md)
 - [zzsza님의 Datasicence-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)
