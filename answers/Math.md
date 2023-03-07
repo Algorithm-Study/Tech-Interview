@@ -156,7 +156,7 @@ $ f(x) = (1 / (sigma * sqrt(2 * pi))) * exp(-(x - mu)^2 / (2 * sigma^2)) $
 <aside>
 💡 <b>Conditional Probability(조건부 확률이란?)</b>   
 
-주어진 사건이 발생했을 때, 다른 한 사건이 일어날 확률$P(B|A)$와 같이 표현하며 사건$A$에 대한 사건$B$의 조건부 확률이라 한다.
+주어진 사건이 발생했을 때, 다른 한 사건이 일어날 확률 $P(B|A)$와 같이 표현하며 사건 $A$에 대한 사건 $B$의 조건부 확률이라 한다.
 
 </aside>
 
@@ -167,7 +167,7 @@ $$
 
 이를 활용해 아래와 같이 베이즈 정리를 유도할 수 있다.
 
-<center><img src="../img/Math/img2.png" width="80%" height="80%"></center>
+<p align="center"><img src="../img/Math/img2.png" width="80%" height="80%"></p>
 
 - $D$: 새로 관찰되는 데이터
 - $\theta$: 모델에서 계산하고 싶어하는 모수 (가설)
@@ -200,21 +200,21 @@ $$
 
 - 기본 정의
     
-    $$
-    Cov(X,Y) = \sigma_{xy} = E[(X-\mu x)(Y-\mu y)]
-    $$
+$$
+Cov(X,Y) = \sigma_{xy} = E[(X-\mu x)(Y-\mu y)]
+$$
     
 - 이산 확률인 경우
     
-    $$
-    Cov(X,Y) = \sum_{(x,y)\in S} \sum (X - \mu x)(Y - \mu y)f(x,y)
-    $$
+$$
+Cov(X,Y) = \sum_{(x,y)\in S} \sum (X - \mu x)(Y - \mu y)f(x,y)
+$$
     
 - 연속 확률인 경우
     
-    $$
-    Cov(X,Y) = \int_{S_2}\int_{S_1} (X - \mu x)(Y - \mu y)f(x,y)dxdy
-    $$
+$$
+Cov(X,Y) = \int_{S_2}\int_{S_1} (X - \mu x)(Y - \mu y)f(x,y)dxdy
+$$
     
 
 기대값의 성질을 이용하여 정리하면 다음과 같이 표현된다.
@@ -233,7 +233,7 @@ $$
 
 **그래프 상에서의 공분산**
 
-<center><img src="../img/Math/img3.png" width="90%" height="90%"></center>
+<p align="center"><img src="../img/Math/img3.png" width="90%" height="90%"></p>
 
 - $Cov(X,Y) > 0$ : X가 증가할 때, Y도 증가한다.
 - $Cov(X,Y) < 0$ : 가 증가할 때, Y는 감소한다.
