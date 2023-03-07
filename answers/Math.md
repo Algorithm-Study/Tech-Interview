@@ -126,7 +126,11 @@ $$
 누적 분포 함수는 확률 분포를 함수라는 편리한 상태로 바꾸어 주었고, 확률이 어느 사건에 어느 정도 분포되어 있는지 수학적으로 명확하게 표현해 준다. 그러나 누적 분포 함수는 분포의 형상을 직관적으로 이해하기 어렵다는 단점이 있고, 이를 알기 위해서 확률 변수가 나올 수 있는 전체 구간을 아주 작은 폭을 가지는 구간들로 나눈 다음 각 구간의 확률을 살펴보는 것이 편리하다. 그러나 이 과정에서 구간의 폭을 어느 정도로 정의해야 하는지에 대한 추가적인 약속이 필요하고 이러한 단점을 보완하기 위해 상대적인 확률 분포 형태만을 보도록 만들어진 것이 확률 밀도 함수이다. 누적 확률 분포 그래프 x축의 오른쪽으로 이동하면서 크기의 변화를 살펴보면 특정한 구간에서 확률이 배정되지 않는다면 기울기가 0이고 배정된다면 기울기가 0이 아닐 것이다. 따라서 기울기의 크기를 보면 각 위치에 배정된 확률의 상대적인 크기를 알 수 있고, 기울기의 크기를 구하는 수학적 연산이 미분이므로 확률 밀도 함수는 누적 분포 함수의 미분으로 정의한다. 이러한 이유로 확률밀도함수와 누적분포함수는 미적분의 관계를 가지고 있다.(데이터가 연속형일때만 해당)
 
 $$
-\int_{-\infty}^{\infty} f(x)dx = 1\\P(a\le X \le b) = \int_a^b f(x)dx
+\int_{-\infty}^{\infty} f(x)dx = 1
+$$
+
+$$
+P(a\le X \le b) = \int_a^b f(x)dx
 $$
 
 확률 밀도 함수는 확률 변수 X가 어떤 값 x를 가질 확률을 나타내는 것이 아니라, x 근처에서의 확률 밀도를 나타내는 것이다. 이때, 확률 밀도 함수는 다음과 같은 특성을 가진다.
@@ -137,9 +141,11 @@ $$
 
 확률 밀도 함수는 각 확률 변수의 분포마다 다르게 정의된다. 예를 들어, 정규 분포의 확률 밀도 함수는 다음과 같다.
 
-$ f(x) = (1 / (sigma * sqrt(2 * pi))) * exp(-(x - mu)^2 / (2 * sigma^2)) $
+$$ 
+f(x) = {1 \over \sqrt{2\pi\sigma^2}}e^{-(x-\mu)^2 \over 2\sigma^2}
+$$
 
-여기서 mu는 평균값이며, sigma는 표준 편차이다. 이 함수는 종 모양으로, 평균값을 중심으로 좌우로 대칭이며, 표준 편차가 작을수록 곡선이 좁아진다.
+여기서 $\mu$는 평균값이며, $\sigma$는 표준 편차이다. 이 함수는 종 모양으로, 평균값을 중심으로 좌우로 대칭이며, 표준 편차가 작을수록 곡선이 좁아진다.
 
 **Reference**
 - [https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/distribution-functions/cumulative-distribution-function.html](https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/distribution-functions/cumulative-distribution-function.html)
@@ -156,18 +162,21 @@ $ f(x) = (1 / (sigma * sqrt(2 * pi))) * exp(-(x - mu)^2 / (2 * sigma^2)) $
 <aside>
 💡 <b>Conditional Probability(조건부 확률이란?)</b>   
 
-주어진 사건이 발생했을 때, 다른 한 사건이 일어날 확률 $P(B|A)$와 같이 표현하며 사건 $A$에 대한 사건 $B$의 조건부 확률이라 한다.
+주어진 사건이 발생했을 때, 다른 한 사건이 일어날 확률$P(B|A)$와 같이 표현하며 사건$A$에 대한 사건$B$의 조건부 확률이라 한다.
 
 </aside>
 
 $$
-P(B|A)={P(A \cap B) \over P(A)}\\
+P(B|A)={P(A \cap B) \over P(A)}
+$$
+
+$$
 P(A \cap B) = P(B|A)P(A)
 $$
 
 이를 활용해 아래와 같이 베이즈 정리를 유도할 수 있다.
 
-<p align="center"><img src="../img/Math/img2.png" width="80%" height="80%"></p>
+<center><img src="../img/Math/img2.png" width="80%" height="80%"></center>
 
 - $D$: 새로 관찰되는 데이터
 - $\theta$: 모델에서 계산하고 싶어하는 모수 (가설)
@@ -233,7 +242,7 @@ $$
 
 **그래프 상에서의 공분산**
 
-<p align="center"><img src="../img/Math/img3.png" width="90%" height="90%"></p>
+<center><img src="../img/Math/img3.png" width="90%" height="90%"></center>
 
 - $Cov(X,Y) > 0$ : X가 증가할 때, Y도 증가한다.
 - $Cov(X,Y) < 0$ : 가 증가할 때, Y는 감소한다.
