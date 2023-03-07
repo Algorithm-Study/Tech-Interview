@@ -70,7 +70,7 @@ $$
 ### 확률 모형과 확률 변수는 무엇인가요?
 
 <aside>
-💡 확률 변수란 확률로 표현하기 위한 event를 정의하는 것으로 Sample space에서 확률 변수가 취할 수 있는 값에 따라 세 가지로 나뉜다.
+💡 <b>확률 변수란 확률로 표현하기 위한 event를 정의하는 것으로 Sample space에서 확률 변수가 취할 수 있는 값에 따라 세 가지로 나뉜다.</b>
 
 </aside>
 
@@ -89,7 +89,7 @@ $$
 ![표본 공간과 확률의 관계](../img/Math/img1.png)
 
 <aside>
-💡 확률 모형이란 확률 변수를 이용하여 데이터 분포를 수학적으로 정의하는 것을 말한다.
+💡 <b>확률 모형이란 확률 변수를 이용하여 데이터 분포를 수학적으로 정의하는 것을 말한다.</b>
 
 </aside>
 
@@ -105,10 +105,12 @@ $$
 - [hanse’s.log - 확률 모형과 확률 변수](https://velog.io/@ohs2251/%ED%99%95%EB%A5%A0-%EB%AA%A8%ED%98%95%EA%B3%BC-%ED%99%95%EB%A5%A0-%EB%B3%80%EC%88%98)
 - [Jupyter Community](https://notebook.community/zzsza/Datascience_School/09.%20%EA%B8%B0%EC%B4%88%20%ED%99%95%EB%A5%A0%EB%A1%A02%20-%20%ED%99%95%EB%A5%A0%20%EB%B3%80%EC%88%98/03.%20%ED%99%95%EB%A5%A0%20%EB%AA%A8%ED%98%95%EC%9D%B4%EB%9E%80)
 
+---
+
 ### 누적 분포 함수와 확률 밀도 함수는 무엇인가요? 수식과 함께 표현해주세요.
 
 <aside>
-💡 누적분포함수란 확률론에서 주어진 확률 분포가 특정 값보다 작거나 같은 확률을 나타내는 함수
+💡 <b>누적분포함수란 확률론에서 주어진 확률 분포가 특정 값보다 작거나 같은 확률을 나타내는 함수</b>
 
 </aside>
 
@@ -146,3 +148,116 @@ $ f(x) = (1 / (sigma * sqrt(2 * pi))) * exp(-(x - mu)^2 / (2 * sigma^2)) $
 - [notebook community](https://notebook.community/junhwanjang/DataSchool/Lecture/08.%20%EA%B8%B0%EC%B4%88%20%ED%99%95%EB%A5%A0%EB%A1%A0%202%20-%20%ED%99%95%EB%A5%A0%EB%B6%84%ED%8F%AC/4\)%20%EB%88%84%EC%A0%81%20%EB%B6%84%ED%8F%AC%20%ED%95%A8%EC%88%98%EC%99%80%20%ED%99%95%EB%A5%A0%20%EB%B0%80%EB%8F%84%20%ED%95%A8%EC%88%98)
 - [[확률/통계] 누적분포함수 (CDF, Cumulative Distribution Function)](https://roytravel.tistory.com/349)
 - [확률 분포 함수와 확률 밀도 함수의 의미](https://velog.io/@groovallstar/%ED%99%95%EB%A5%A0-%EB%B6%84%ED%8F%AC-%ED%95%A8%EC%88%98%EC%99%80-%ED%99%95%EB%A5%A0-%EB%B0%80%EB%8F%84-%ED%95%A8%EC%88%98%EC%9D%98-%EC%9D%98%EB%AF%B8)
+
+---
+
+### 조건부 확률은 무엇인가요?
+
+<aside>
+💡 <b>Conditional Probability(조건부 확률이란?)</b>   
+
+주어진 사건이 발생했을 때, 다른 한 사건이 일어날 확률$P(B|A)$와 같이 표현하며 사건$A$에 대한 사건$B$의 조건부 확률이라 한다.
+
+</aside>
+
+$$
+P(B|A)={P(A \cap B) \over P(A)}\\
+P(A \cap B) = P(B|A)P(A)
+$$
+
+이를 활용해 아래와 같이 베이즈 정리를 유도할 수 있다.
+
+<center><img src="../img/Math/img2.png" width="80%" height="80%"></center>
+
+- $D$: 새로 관찰되는 데이터
+- $\theta$: 모델에서 계산하고 싶어하는 모수 (가설)
+- 사후확률(Posterior): 데이터를 관찰했을 때, 이 가설이 성립할 확률 (데이터 관찰 이후 측정하기 때문에 사후확률)
+- 사전확률(Prior): 가설에 대해 사전에 세운 확률 (데이터 관측 이후 사후확률이 사전확률이 된다.)
+- 가능도(Likelihood): 현재 주어진 모수 (가정) 에서 이 데이터가 관찰될 가능성
+- 증거(Evidence): 데이터 전체의 분포
+
+#### Reference
+- [http://www.stat.yale.edu/Courses/1997-98/101/condprob.htm](http://www.stat.yale.edu/Courses/1997-98/101/condprob.htm)
+- [BoostDevs](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/1-statistics-math.md#5)
+
+---
+
+### 공분산과 상관계수는 무엇일까요? 수식과 함께 표현해주세요.
+
+<aside>
+💡 <b>공분산(Convariance)</b>
+
+확률변수의 기댓값과 분산이 확률분포에 대한 정보를 주듯이 두 확률변수 X, Y 사이에서 정의된 공분산은 두 확률변수의 선형관계에 대한 정보를 알려 준다.
+
+**상관계수(Correlation Coefficient)**
+공분산의 크기는 두 변수의 측정 단위에 따라 달라지므로 의미를 부여하기에 적절하지 않다. 공분산을 각 변수의 표준편차로 나누면 어떤 단위를 사용하든 같은 값을 얻게 되는데, 이 값을 상관계수라고 한다.
+
+</aside>
+
+**공분산**
+
+두 확률변수 X, Y의 기대값을 각각 $\mu x = E(X), \mu y = E(Y)$라고 하면 공분산은 다음과 같이 $X$의 편차와 $Y$의 편차의 곱으로 정의된다.
+
+- 기본 정의
+    
+    $$
+    Cov(X,Y) = \sigma_{xy} = E[(X-\mu x)(Y-\mu y)]
+    $$
+    
+- 이산 확률인 경우
+    
+    $$
+    Cov(X,Y) = \sum_{(x,y)\in S} \sum (X - \mu x)(Y - \mu y)f(x,y)
+    $$
+    
+- 연속 확률인 경우
+    
+    $$
+    Cov(X,Y) = \int_{S_2}\int_{S_1} (X - \mu x)(Y - \mu y)f(x,y)dxdy
+    $$
+    
+
+기대값의 성질을 이용하여 정리하면 다음과 같이 표현된다.
+
+$$
+Cov(X,Y) = E(XY) - E(X)E(Y)
+$$
+
+**공분산의 기본 성질**
+
+- 상수 a에 대하여 $Cov(X, a) = 0$
+- $Cov(X, Y) = Cov(Y,X)$
+- $Cov(X,X) = V(X) \ge 0$
+- $Cov(X_1+X_2,\ Y)=Cov(X_1,Y)+Cov(X_2,Y)$
+- $Cov(aX,Y)=aCov(X,Y)$
+
+**그래프 상에서의 공분산**
+
+<center><img src="../img/Math/img3.png" width="90%" height="90%"></center>
+
+- $Cov(X,Y) > 0$ : X가 증가할 때, Y도 증가한다.
+- $Cov(X,Y) < 0$ : 가 증가할 때, Y는 감소한다.
+- $Cov(X,Y) = 0$ : 아무런 선형관계가 없다.
+
+**상관없음과 독립성**
+
+두 확률변수 X, Y가 독립이면 $E(XY) = E(X)E(Y)$이므로 공분산은 0이 된다. 즉 X와 Y는 상관없다. 그러나 역은 일반적으로 참이 아니다.
+
+**상관계수**
+
+두 확률 변수 X, Y의 상관계수는 $\rho x,y$ 또는 $Corr(X,Y)$로 나타내며 다음과 같이 정의한다
+
+$$
+\rho_{x,y} = Corr(X,Y) = {Cov(X,Y)\over \sqrt {V(X)V(Y)}} ,-1\le \rho \le 1
+$$
+
+- 상관계수의 성질
+    - 상관계수의 절대값은 1을 넘을 수 없다.
+    - 확률변수 X, Y가 독립이라면 상관계수는 0이다.
+    - X, Y가 선형관계인 Y = aX + b의 관계일 때 a가 양수면 상관계수는 1 a가 음수면 -1이다.
+
+#### Reference
+- [https://online.stat.psu.edu/stat414/lesson/18/18.1](https://online.stat.psu.edu/stat414/lesson/18/18.1)
+- [https://datascienceschool.net/02 mathematics/07.05 공분산과 상관계수.html](https://datascienceschool.net/02%20mathematics/07.05%20%EA%B3%B5%EB%B6%84%EC%82%B0%EA%B3%BC%20%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98.html)
+- [공분산(Covariance)과 상관계수(Correlation)](https://destrudo.tistory.com/15)
+- [https://terms.naver.com/entry.naver?docId=3404964&cid=47324&categoryId=47324](https://terms.naver.com/entry.naver?docId=3404964&cid=47324&categoryId=47324)
