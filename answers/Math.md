@@ -270,3 +270,90 @@ $$
 - [https://datascienceschool.net/02 mathematics/07.05 공분산과 상관계수.html](https://datascienceschool.net/02%20mathematics/07.05%20%EA%B3%B5%EB%B6%84%EC%82%B0%EA%B3%BC%20%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98.html)
 - [공분산(Covariance)과 상관계수(Correlation)](https://destrudo.tistory.com/15)
 - [https://terms.naver.com/entry.naver?docId=3404964&cid=47324&categoryId=47324](https://terms.naver.com/entry.naver?docId=3404964&cid=47324&categoryId=47324)
+
+---
+
+### 신뢰 구간의 정의는 무엇인가요?
+
+<aside>
+💡 <b>모집단에서 표본을 추출하여 표본평균을 계산했을 때 정해진 확신의 정도를 가지고 미지의 모수가 속할 것으로 기대되는 구간을 신뢰구간(confidence Interval)이라 한다.
+
+이때 추정한 구간 안에 실제로 모수가 들어있을 확신의 정도를 신뢰수준(신뢰도, confidence level) 또는 신뢰계수 (confidence coefficient)라 한다. 보통 신뢰수준은 백분율로 나타내며, 신뢰계수는 0부터 1 사이의 값으로 나타낸다.</b>
+</aside>
+
+1m 물체의 길이를 추정할 때 길이는 유한하다고 말한다면 신뢰수준 100%가 될 수 있지만 이것은 무의미한 추정이므로 적절한 신뢰수준의 신뢰구간을 추정하는 것이 중요하다.
+
+관측 횟수가 n이고 관측 결과의 평균이 M이라면, n번씩 관측할 때마다 얻어지는 평균값 M들의 값은 당연히 참값에 매우 가까워진다. 더욱 가까워진다는 것은 M들의 표준편차가 작다는 뜻이 되는데, 관측 결과 하나하나가 표준편차 σ인 정규분포를 따른다면, n번 관측하여 얻어지는 M의 표준편차는 다음과 같이 된다.
+
+$$
+N번 관측하여 얻어지는 M의 표준편차 = \sigma / \sqrt{n}
+$$
+
+표본 평균의 평균은 모평균과 같으므로 참값이 m미터라면 **중심극한정리**에의해 관측 결과의 평균 M은 평균이 m이고 표준편차가 $\sigma/\sqrt{n}$인 정규분포를 따르게 되고 정규분포 그래프를 통해 다음의 사실을 알 수 있다.
+
+$$
+m-\sigma/\sqrt{n}<M<m+\sigma/\sqrt{n} \, 일 확률이 약 68\%이다.
+$$
+
+위 식을 m을 기준으로 이항 정리하면 아래와 같다
+
+$$
+M-\sigma/\sqrt{n}<m<M+\sigma/\sqrt{n} \, 일 확률이 약 \,68\%이다.
+$$
+
+이를 통해 참값 m이 관측으로부터 구한 평균값 M 근처에 있을 확률을 표현할 수 있게 된다.
+
+확률 68%를 **신뢰수준**, **신뢰도**라 하며 100%에서 신뢰수준을 뺀 32%를 **유의수준**이라고 한다.
+
+이는 표본을 100번 추출했을 때 100개의 신뢰구간 중에 95개 정도가 모수의 참값을 포함하고 5개 정도는 모수의 참값을 포함하지 않는다는 것을 의미한다.
+
+<center><img src="../img/Math/img4.png" width="90%" height="90%"></center>
+
+**신뢰 구간의 특성**
+
+- 신뢰 구간이 좁을수록 모집단 평균 추정치가 정확해진다.
+- 일반적으로 표본 크기가 클수록, 신뢰 구간이 좁아진다.
+
+**중심극한정리**
+
+- 모집단에서 표본 평균을 끝없이 구할 수록 표본 평균의 분포는 정규 분포를 따르게 됨
+
+#### Reference
+
+- [https://angeloyeo.github.io/2021/01/05/confidence_interval.html](https://angeloyeo.github.io/2021/01/05/confidence_interval.html)
+- [https://terms.naver.com/entry.naver?docId=6512706&cid=60207&categoryId=60207](https://terms.naver.com/entry.naver?docId=6512706&cid=60207&categoryId=60207)
+- [https://terms.naver.com/entry.naver?docId=3569431&cid=58944&categoryId=58970](https://terms.naver.com/entry.naver?docId=3569431&cid=58944&categoryId=58970)
+
+---
+
+### P-value를 모르는 사람에게 설명한다면 어떻게 설명하실 건가요?
+<aside>
+💡 <b>p-value: 얻은 검정 통계량(ex, t-value)보다 크거나 같은 값을 얻을 수 있는 확률
+이때, 검정 통계량의 대부분이 귀무가설을 가정하고 얻게 되는 값</b>
+</aside>
+
+- “모평균이 100이다”라는 귀무가설이 참이라는 가정 하에서, 100개의 데이터를 sampling 할 때 이론적으로 나올 수 있는 평균의 분포에서, 지금 내가 갖고 있는 표본 평균의 값인 95보다 큰 값이 나올 수 있는 확률을 말한다.
+
+- 위의 예시에서 그럴 확률이 매우 낮다면 귀무가설을 기각할 수 있게 된다.
+
+- 우연히 발생할 가능성이 매우 희박한 사건이 실제로 발생했을 경우, 그것을 우연이 아니라고 생각하는 경향이 있고, p-value 역시 그와 같은 경향을 따른 것이기 때문이다.
+
+- 일반적으로 P-value가 5% 보다 작으면 귀무가설을 기각한다.
+하지만 이 5% 기준은 전통적으로 사용하는 수치이기 때문에 실험자가 조정 가능하다.
+
+- 일반적으로 p-value가 너무 낮으면, 그렇게 낮은 확률의 사건이 실제로 일어났다고 생각하기 보다는 귀무가설이 틀렸다고 생각하게 된다. 그래서 귀무가설을 기각하고 대립가설을 채택하게 되는데 p-value는 검정 통계량이 압축적으로 담고 있던 정보를 더 압축했기 때문에 효과의 크기(effect size)가 커지거나 표본의 크기(n)가 커지면 p-value는 작아진다는 것을 명심해야 한다.
+
+- p-value가 의미하는 것: 효과의 크기 (effect size, 표본의 크기)
+→ p-value가 작은 이유는 effect size가 크기 때문인지 표본의 크기가 크기 때문인지 알 수 없음
+
+<center><img src="../img/Math/img5.png" width="45%" height="45%"> <img src="../img/Math/img6.png" width="45%" height="45%"></center>
+
+#### Reference
+
+- [https://angeloyeo.github.io/2020/03/29/p_value.html](https://angeloyeo.github.io/2020/03/29/p_value.html)
+- [https://www.scribbr.com/statistics/p-value/](https://www.scribbr.com/statistics/p-value/)
+- [https://adnoctum.tistory.com/332](https://adnoctum.tistory.com/332)
+- [https://terms.naver.com/entry.naver?docId=3580638&cid=58944&categoryId=58970](https://terms.naver.com/entry.naver?docId=3580638&cid=58944&categoryId=58970)
+- [https://terms.naver.com/entry.naver?docId=6458445&cid=68053&categoryId=68053](https://terms.naver.com/entry.naver?docId=6458445&cid=68053&categoryId=68053)
+
+---
