@@ -361,3 +361,78 @@ p-value가 의미하는 것: 효과의 크기 (effect size, 표본의 크기)
 - [https://terms.naver.com/entry.naver?docId=6458445&cid=68053&categoryId=68053](https://terms.naver.com/entry.naver?docId=6458445&cid=68053&categoryId=68053)
 
 ---
+
+### R square의 의미는 무엇인가요?
+
+<aside>
+ 
+💡 <b>Coefficient of Determination은 회귀 모델에서 독립 변수가 종속변수를 얼마만큼 설명해 주는지 가리키는 지표(높을 수록 잘 설명)</b>
+
+</aside>
+
+#### 결정계수 시각화 예시
+<center><img src="../img/Math/img7.png" width="45%" height="45%"></center>
+
+#### 결정계수 계산 방법
+$$
+R^2 = 1-{Residual\ Sum \ of \ Squares \  (SSR) \over total\ Sum \ of \ squares\ (SST)} = {Explained\ Sum \ of\ Squares \ (SSE) \over total\ Sum \ of \ squares \ (SST)}\\
+$$
+1. SST : 
+    관측값에서 관측값의 평균을 뺀 결과의 총합
+    $$
+    SST = \sum^n_{i=1}(y_i-\overline y)^2
+    $$
+2. SSE :
+    추정값에서 관측값의 평균을 뺀 결과의 총합
+    $$
+    SSE = \sum^n_{i=1}(\hat y - \overline y_i)^2
+    $$
+3. SSR :
+    관측값에서 추정값을 뺀 값의 총합
+    $$
+    SSR = \sum^n_{i=1}(y_i-\hat y)^2
+    $$
+
+#### Reference
+
+- [https://m.blog.naver.com/tlrror9496/222055889079](https://m.blog.naver.com/tlrror9496/222055889079)
+
+- [https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/regression-and-correlation/coefficient-of-determination-r-squared.html](https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/regression-and-correlation/coefficient-of-determination-r-squared.html)
+---
+
+### 평균(mean)과 중앙값(median) 중에 어떤 케이스에서 뭐를 써야할까요?
+
+<aside>
+ 
+💡 <b>
+1. 자료값의 분포가 대칭적이고 단일봉 형태인 경우 : 평균
+2. 자료의 값에 한 개 이상의 극단적인 값이 있는 경우 : 중앙값
+3. 자료의 값의 분포가 한 쪽으로 치우친 경우 : 중앙값
+
+</b>
+
+</aside>
+
+#### 평균 종류
+1. 산술평균 : 
+    이상치에 민감
+    $$
+    { a+b }\over n
+    $$
+2. 기하평균 :
+    기간 별 상승 하락 계산 시 유용
+    $$
+    \sqrt[n]{(ab)}
+    $$
+3. 조화평균 :
+    F1 score를 구할 때 사용
+    $$
+    2ab \over {a+b}
+    $$
+
+#### Reference
+
+- [https://terms.naver.com/entry.naver?docId=3338104&cid=47324&categoryId=47324](https://terms.naver.com/entry.naver?docId=3338104&cid=47324&categoryId=47324)
+
+- [https://lsh-story.tistory.com/76](https://lsh-story.tistory.com/76)
+---
