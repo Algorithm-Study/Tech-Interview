@@ -377,21 +377,27 @@ p-value가 의미하는 것: 효과의 크기 (effect size, 표본의 크기)
 $$
 R^2 = 1-{Residual\ Sum \ of \ Squares \  (SSR) \over total\ Sum \ of \ squares\ (SST)} = {Explained\ Sum \ of\ Squares \ (SSE) \over total\ Sum \ of \ squares \ (SST)}\\
 $$
+
 1. SST : 
     관측값에서 관측값의 평균을 뺀 결과의 총합
-    $$
-    SST = \sum^n_{i=1}(y_i-\overline y)^2
-    $$
+    
+$$
+SST = \sum^n_{i=1}(y_i-\overline y)^2
+$$
+
 2. SSE :
     추정값에서 관측값의 평균을 뺀 결과의 총합
-    $$
-    SSE = \sum^n_{i=1}(\hat y - \overline y_i)^2
-    $$
+    
+$$
+SSE = \sum^n_{i=1}(\hat y - \overline y_i)^2
+$$
+
 3. SSR :
     관측값에서 추정값을 뺀 값의 총합
-    $$
-    SSR = \sum^n_{i=1}(y_i-\hat y)^2
-    $$
+    
+$$
+SSR = \sum^n_{i=1}(y_i-\hat y)^2
+$$
 
 #### Reference
 
@@ -416,19 +422,24 @@ $$
 #### 평균 종류
 1. 산술평균 : 
     이상치에 민감
-    $$
-    { a+b }\over n
-    $$
+    
+ $$
+{ a+b }\over n
+$$
+    
 2. 기하평균 :
     기간 별 상승 하락 계산 시 유용
-    $$
-    \sqrt[n]{(ab)}
-    $$
+    
+ $$
+\sqrt[n]{(ab)}
+$$
+    
 3. 조화평균 :
     F1 score를 구할 때 사용
-    $$
-    2ab \over {a+b}
-    $$
+    
+$$
+2ab \over {a+b}
+$$
 
 #### Reference
 
