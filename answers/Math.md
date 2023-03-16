@@ -371,6 +371,7 @@ p-value가 의미하는 것: 효과의 크기 (effect size, 표본의 크기)
 </aside>
 
 #### 결정계수 시각화 예시
+
 <center><img src="../img/Math/img7.png" width="45%" height="45%"></center>
 
 #### 결정계수 계산 방법
@@ -402,36 +403,28 @@ $$
 #### Reference
 
 - [https://m.blog.naver.com/tlrror9496/222055889079](https://m.blog.naver.com/tlrror9496/222055889079)
-
 - [https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/regression-and-correlation/coefficient-of-determination-r-squared.html](https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/statistics/regression-and-correlation/coefficient-of-determination-r-squared.html)
 ---
 
 ### 평균(mean)과 중앙값(median) 중에 어떤 케이스에서 뭐를 써야할까요?
 
-<aside>
- 
-💡 <b>
-1. 자료값의 분포가 대칭적이고 단일봉 형태인 경우 : 평균
-2. 자료의 값에 한 개 이상의 극단적인 값이 있는 경우 : 중앙값
-3. 자료의 값의 분포가 한 쪽으로 치우친 경우 : 중앙값
+1. <b>자료값의 분포가 대칭적이고 단일봉 형태인 경우 : 평균</b>
+2. <b>자료의 값에 한 개 이상의 극단적인 값이 있는 경우 : 중앙값</b>
+3. <b>자료의 값의 분포가 한 쪽으로 치우친 경우 : 중앙값</b>
 
-</b>
-
-</aside>
-
-#### 평균 종류
+<b>평균 종류</b>
 1. 산술평균 : 
     이상치에 민감
     
- $$
+$$
 { a+b }\over n
 $$
     
 2. 기하평균 :
     기간 별 상승 하락 계산 시 유용
     
- $$
-\sqrt[n]{(ab)}
+$$
+\sqrt[n]{ab}
 $$
     
 3. 조화평균 :
@@ -444,6 +437,81 @@ $$
 #### Reference
 
 - [https://terms.naver.com/entry.naver?docId=3338104&cid=47324&categoryId=47324](https://terms.naver.com/entry.naver?docId=3338104&cid=47324&categoryId=47324)
-
 - [https://lsh-story.tistory.com/76](https://lsh-story.tistory.com/76)
+---
+
+### 중심극한 정리는 왜 유용한걸까요?
+
+💡 <b>중심극한 정리가 유용한 이유</b>
+
+표본 크기가 n인 표본을 여러 번 반복해서 추출했을 때 각 표본 평균들이 이루는 분포가 정규분포가 이루게 된다. 이 때, 정규분포의 평균은 모집단의 평균이고 정규분포의 표준편차는 모집단의 표준편차를 $\sqrt n$ ($n$: 표본의 크기)으로 나눈 형태로 나타나기 때문에 이를 기반으로 모수를 추정할 수 있기 때문에 유용하다.
+
+
+<center><img src="../img/Math/img8.png" width="100%" height="100%"></center>
+
+- i.i.d.(independent and identically distribution) 가정이 성립하고 평균, 표준편차만 알고 있으면 $X_i$의 분포 자체에 대한 정보가 없더라도 $\xi_n$의 분포를 점근적으로 알 수 있다.
+
+$$
+\xi_n = {\sum_{i=1}^n X_i - n\mu \over \sqrt n \sigma}
+$$
+
+- 데이터(혹은 표본)가 충분하지 않은 상황에서 정규분포로 가정하는 것은 올바르지 않다. 즉 극단적인 사례가 발생할 상황은 과소 평가 되기 쉽고 대부분의 상황을 정규분포로 가정해서 큰 피해를 본 경우가 2008년 금융 위기이다.
+
+### Reference
+
+- [필로홍의 데이터 노트](https://drhongdatanote.tistory.com/57)
+- [Truth in Engineering](https://m.blog.naver.com/mykepzzang/220851280035)
+
+---
+### 엔트로피(entropy)에 대해 설명해주세요. 가능하면 Information Gain도요.
+
+<aside>
+💡 <b>Entropy</b>란 최적의 전략 하에서 그 사건을 예측하는 데에 필요한 질문 개수를 의미한다. 
+다른 표현으로는 최적의 전략 하에서 필요한 질문 개수에 대한 <b>기댓값</b>이다. 따라서, 이 entropy가 감소한다는 것은 우리가 그 사건을 맞히기 위해서 필요한 질문의 개수가 줄어드는 것을 의미하고 질문의 개수가 줄어든다는 사실은 정보량도 줄어든다는 의미이다.
+
+</aside>
+
+$$
+I(x) = -log_b(P(x)) \ \ (b = 2,e,10 ...)
+$$
+
+- log로 표시하는 이유
+    - 확률과 반비례 관계
+    - 두 사건의 정보량의 합은 각 사건의 정보량의 합과 같아야 하기 때문에
+
+$$
+질문개수 = log_2(가능한 결과의 수)\\
+H = nlog(s)\\ \space \space \space \space =log(s^n) \\
+H(x)=\sum^{n}_{i=1}P(x_i)(-log_b(P(x_i)))
+$$
+
+- Entropy는 가능한 모든 사건이 같은 확률로 일어날 때 그 최댓값을 가짐
+
+<aside>
+💡 <b>Information Gain(IG)</b>은 어떤 속성을 선택함으로 인해서 데이터를 더 잘 구분하게 되는 것을 말한다. 이는 어떤 조건으로 데이터를 분류할 때 엔트로피가 얼마나 감소 하는지를 측정함으로써 계산할 수 있고 Decision Tree의 부모 노드와 자식 노드의 차이가 이에 해당한다.
+
+</aside>
+
+- Decision Tree
+    - 자식 노드가 부모 노드보다 더 순수도가 높은 자식 노드들이 되도록 데이터를 반복적으로 더 작은 집단으로 나누는 것
+
+$$
+IG(feature) = H_{before} - H_{split\ by\ feature}\\
+Gain(A) = I(_{S_1,S_2,S_3,...,S_m)}-E(속성(A)) \ \ (S_1,S_2,...는 \ 상위\ 노드의\ 엔트로피)
+$$
+
+- 정보 이득은 상위 노드의 엔트로피에서 하위 노드의 엔트로피를 뺀 값이다. 그리고 E(A)는 A라는 속성을 선택했을 때 하위로 작은 m개의 노드로 나누어진다고 하면 하위 각 노드의 엔트로피를 계산 한 후 노드의 속한 레코드의 개수를 가중치로 하여 평균한 값이다.
+- Gain(A)는 속성 A를 선택했을 때의 정보 이득 양을 계산하는 수식으로 원래 노드의 엔트로피를 구하고, 방금 구한 엔트로피를 선택한 후의 m개의 하위 노드로 나누어진 것에 대한 전체적인 엔트로피를 구한 후의 값을 뺀 결과이다.
+- Gain(A) 값이 클수록 정보 이득이 큰 것이고, 변별력이 좋다는 것을 의미한다.
+
+### Reference
+
+- [결정 트리 설명 및 분류기 구현](https://needjarvis.tistory.com/709)
+- [엔트로피 이해하기](https://needjarvis.tistory.com/716)
+- [정보 이득 이해하기](https://needjarvis.tistory.com/718)
+- [공돌이의 수학정리노트](https://angeloyeo.github.io/2020/10/26/information_entropy.html)
+- [[인공지능] 엔트로피(Entropy) 와 정보이득(Information Gain) 계산](https://eehoeskrap.tistory.com/13)
+- [Voyager - Information Gain](https://gmnam.tistory.com/207)
+- [초보를 위한 정보이론 안내서](https://hyunw.kim/blog/2017/10/14/Entropy.html)
+
 ---
