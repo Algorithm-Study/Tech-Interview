@@ -518,11 +518,10 @@ $$
 
 ### 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
 
-<aside>
-💡 모수적 방법론(Parametric method): 모집단의 분포가 특정 확률분포(Probability Distribution)의 형태로 나타나는 경우 사용한다.
-비모수적 방법론(Nonparametric method): 표본의 수가 적어 정규분포를 가정할 수 없는 경우, 모집단에 대한 정보가 없는 경우 사용한다.
 
-</aside>
+💡 **모수적 방법론(Parametric method): 모집단의 분포가 특정 확률분포(Probability Distribution)의 형태로 나타나는 경우 사용한다.
+비모수적 방법론(Nonparametric method): 표본의 수가 적어 정규분포를 가정할 수 없는 경우, 모집단에 대한 정보가 없는 경우 사용한다.**
+
 
 - 모수적 방법
     - 관측 값이 어느 특정한 확률분포를 따른다고 전제한 후 그 분포의 모수에 대한 검정을 실시할 때 사용 가능하다.
@@ -545,15 +544,14 @@ $$
 - [제 13장. 비모수적 방법(Distribution-free Method)](http://contents.kocw.net/KOCW/document/2013/koreasejong/HongSungsik4/13.pdf)
 - [[통계이론] 모수적 방법 vs 비모수적 방법](https://zzanhtt.tistory.com/18)
 
-## “likelihood”와 “probability”의 차이는 무엇일까요?
-
 ---
 
-<aside>
-💡 확률(Probability): 주어진 확률분포가 있을 때, 관측값 혹은 관측 구간이 분포 안에서 일어날 가능성을 뜻하고 $f(x|\theta)$ 로 표현한다.
-가능도(Likelihood): 어떤  값이 관측 되었을 때 이것이 어떤 확률 분포에서 왔는지에 대한 가능성을 뜻한다. $\mathcal{L}(\theta|x)$ 로 표현한다.
+### “likelihood”와 “probability”의 차이는 무엇일까요?
 
-</aside>
+
+💡 **확률(Probability): 주어진 확률분포가 있을 때, 관측값 혹은 관측 구간이 분포 안에서 일어날 가능성을 뜻하고 $f(x|\theta)$ 로 표현한다.
+가능도(Likelihood): 어떤  값이 관측 되었을 때 이것이 어떤 확률 분포에서 왔는지에 대한 가능성을 뜻한다. $\mathcal{L}(\theta|x)$ 로 표현한다.**
+
 
 <center><img src="../img/Math/img9.png" width="50%" height="50%"></center>
 
@@ -572,3 +570,5 @@ $$
 - [[기초통계] 확률(Probability) vs 우도(가능도,Likelihood)](https://dlearner.tistory.com/43)
 - [[수리통계학] 가능도는 확률과 어떻게 다르지?](https://blog.naver.com/sw4r/221361565730)
 - [가능도(Likelihood)와 확률(Probability)의 차이](https://swjman.tistory.com/104)
+
+---
