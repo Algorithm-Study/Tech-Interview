@@ -515,3 +515,60 @@ $$
 - [초보를 위한 정보이론 안내서](https://hyunw.kim/blog/2017/10/14/Entropy.html)
 
 ---
+
+### 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
+
+<aside>
+💡 모수적 방법론(Parametric method): 모집단의 분포가 특정 확률분포(Probability Distribution)의 형태로 나타나는 경우 사용한다.
+비모수적 방법론(Nonparametric method): 표본의 수가 적어 정규분포를 가정할 수 없는 경우, 모집단에 대한 정보가 없는 경우 사용한다.
+
+</aside>
+
+- 모수적 방법
+    - 관측 값이 어느 특정한 확률분포를 따른다고 전제한 후 그 분포의 모수에 대한 검정을 실시할 때 사용 가능하다.
+    - 중심 극한 정리에 의해 일정 수 이상의 표본은 모집단의 분포와 상관없이 정규분포에 근접한다.
+    - 확률분포의 평균, 표준편차 등의 모수를 비교함으로써 집단간의 차이를 밝힐 수 있다.
+- 비모수적방법
+    - 관측 값이 어느 특정한 확률분포를 따른다고 전제할 수 없는 경우, 모집단에 대한 아무런 정보가 없는 경우에 사용 가능하다.
+    - 자료를 크기 순으로 배열하여 순위를 매긴 다음 순위의 합을 통해 차이를 비교하는 순위합검정을 적용할 수 있다.
+- 관련 모델
+    - 모수적 모델
+        - 회귀모델, 로지스틱회귀모델, 1차/2차 판별 모델(LDA / QDA)
+    - 비모수적 모델
+        - 의사결정나무, 랜덤포레스트, K-근접 이웃(KNN)
+    - 인공신경망의 경우 모수적 모델과 비모수적 모델 두 방법이 혼재한다.
+
+### Reference
+
+- [모수 모델 vs. 비모수 모델 머신러닝 모델링 관점에서](https://brunch.co.kr/@seoungbumkim/7)
+- [통계용어 - 모수적, 비모수적 방법](https://datacookbook.kr/64)
+- [제 13장. 비모수적 방법(Distribution-free Method)](http://contents.kocw.net/KOCW/document/2013/koreasejong/HongSungsik4/13.pdf)
+- [[통계이론] 모수적 방법 vs 비모수적 방법](https://zzanhtt.tistory.com/18)
+
+## “likelihood”와 “probability”의 차이는 무엇일까요?
+
+---
+
+<aside>
+💡 확률(Probability): 주어진 확률분포가 있을 때, 관측값 혹은 관측 구간이 분포 안에서 일어날 가능성을 뜻하고 $f(x|\theta)$ 로 표현한다.
+가능도(Likelihood): 어떤  값이 관측 되었을 때 이것이 어떤 확률 분포에서 왔는지에 대한 가능성을 뜻한다. $\mathcal{L}(\theta|x)$ 로 표현한다.
+
+</aside>
+
+<center><img src="../img/Math/img9.png" width="50%" height="50%"></center>
+
+- 여행을 가기 위해 캐리어에 짐을 쌓았을 때 캐리어 무게를 예로 든다면, 확률은 확률분포가 고정됐을 때 캐리어 무게가 20~30인 사건이 일어날 가능성을 뜻한다.
+
+<center><img src="../img/Math/img10.png" width="100%" height="100%"></center>
+
+- 가능도는 고정된 사건에서 사건이 일어날 확률분포에 대한 가능성을 의미한다. 왼쪽은 30kg 캐리어를 관찰할 가능성은 0.2고 오른쪽은 0.3이다. 따라서 가능도는 왼쪽보다 오른쪽이 더 크다.
+
+- 확률은 어떤 시행(trial, experiment)에서 특정 결과(sample)가 나올 가능성. 즉, 시행 전 모든 경우의 수의 가능성은 정해져 있으며 그 총합은 1(100%)이다.
+- 가능도는 어떤 시행(trial, experiment)을 충분히 수행한 뒤 그 결과(sample)를 토대로 경우의 수의 가능성을 도출하는 것. 아무리 충분히 수행해도 어디까지나 추론(inference)이기 때문에 가능성의 합이 1이 되지 않을 수도 있다.
+
+### Reference
+
+- [StatQuest: Maximum Likelihood 최대 우도 추정, 매우 깔끔하게 설명되었습니다!!!](https://www.youtube.com/watch?v=XepXtl9YKwc&t=252s)
+- [[기초통계] 확률(Probability) vs 우도(가능도,Likelihood)](https://dlearner.tistory.com/43)
+- [[수리통계학] 가능도는 확률과 어떻게 다르지?](https://blog.naver.com/sw4r/221361565730)
+- [가능도(Likelihood)와 확률(Probability)의 차이](https://swjman.tistory.com/104)
