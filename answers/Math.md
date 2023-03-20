@@ -594,10 +594,10 @@ $$
 
 ### Reference
 
-[4.2. Bootstrp - An Introduction to Statistical Learning](https://wikidocs.net/33014)   
-[부트스트랩 샘플링이란?](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=mathnstat&logNo=221404758083)   
-[DATA -12. 부트스트랩](https://bkshin.tistory.com/entry/DATA-12)   
-[공돌이의 수학정리노트](https://angeloyeo.github.io/2021/07/19/jackknife_and_bootstrap.html#%EA%B0%9C%EC%9A%94)
+- [4.2. Bootstrp - An Introduction to Statistical Learning](https://wikidocs.net/33014)   
+- [부트스트랩 샘플링이란?](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=mathnstat&logNo=221404758083)   
+- [DATA -12. 부트스트랩](https://bkshin.tistory.com/entry/DATA-12)   
+- [공돌이의 수학정리노트](https://angeloyeo.github.io/2021/07/19/jackknife_and_bootstrap.html#%EA%B0%9C%EC%9A%94)
 
 ---
 ### 모집단의 수가 매우 적은 (수십개 이하) 케이스의 경우 어떤 방식으로 예측 모델을 수립할 수 있을까요?
@@ -624,7 +624,7 @@ $$
 
 ### Reference
 
-[비모수적 방법 - Medical Programmer](http://theyoonicon.com/%EB%B9%84%EB%AA%A8%EC%88%98%EC%A0%81-%EB%B0%A9%EB%B2%95/)   
-[표본 크기가 작을 때(n<30)는 어떻게 해야 하죠? 정규성 검정은 꼭? 이걸 모르면 궁금증의 지옥행](https://recipesds.tistory.com/entry/%ED%91%9C%EB%B3%B8-%EC%88%98%EA%B0%80-%EC%9E%91%EC%9D%84-%EB%95%8C%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%98%EC%A3%A0-%EC%A0%95%EA%B7%9C%EC%84%B1-%EA%B2%80%EC%A0%95%EC%9D%80-%EA%BC%AD-%EC%9D%B4%EA%B1%B8-%EB%AA%A8%EB%A5%B4%EB%A9%B4-%EA%B6%81%EA%B8%88%EC%A6%9D%EC%9D%98-%EC%A7%80%EC%98%A5-%ED%96%89)   
-[[통계이론] 모수적 방법 vs 비모수적 방법](https://zzanhtt.tistory.com/18)    
+- [비모수적 방법 - Medical Programmer](http://theyoonicon.com/%EB%B9%84%EB%AA%A8%EC%88%98%EC%A0%81-%EB%B0%A9%EB%B2%95/)   
+- [표본 크기가 작을 때(n<30)는 어떻게 해야 하죠? 정규성 검정은 꼭? 이걸 모르면 궁금증의 지옥행](https://recipesds.tistory.com/entry/%ED%91%9C%EB%B3%B8-%EC%88%98%EA%B0%80-%EC%9E%91%EC%9D%84-%EB%95%8C%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%98%EC%A3%A0-%EC%A0%95%EA%B7%9C%EC%84%B1-%EA%B2%80%EC%A0%95%EC%9D%80-%EA%BC%AD-%EC%9D%B4%EA%B1%B8-%EB%AA%A8%EB%A5%B4%EB%A9%B4-%EA%B6%81%EA%B8%88%EC%A6%9D%EC%9D%98-%EC%A7%80%EC%98%A5-%ED%96%89)   
+- [[통계이론] 모수적 방법 vs 비모수적 방법](https://zzanhtt.tistory.com/18)    
 ---
