@@ -572,3 +572,59 @@ $$
 - [가능도(Likelihood)와 확률(Probability)의 차이](https://swjman.tistory.com/104)
 
 ---
+
+### 통계에서 사용되는 bootstrap의 의미는 무엇인가요.
+
+💡 **단일 랜덤 표본에서 복원 추출을 진행해서 표본 추출 분포를 추정하는 방법으로 대표적인 리샘플링 기법 중 하나**
+
+- 장점
+    : 평균(mean)같이 표준 오차가 잘 알려진 추정량들은 이런 부트스트랩 같은 방법을 쓸 이유가 없지만 표준 오차를 계산하는 방법이 잘 알려져 있지 않은 추정량들의 경우 부트스트랩 방법을 통해 오차 범위를 파악할 수 있음
+
+- 사용 시기
+    : 확률 변수의 정확한 확률 분포를 모르는 경우나 측정된 샘플이 부족한 경우
+
+- 신뢰 구간을 구하는 절차
+    1. 전체 n개의 표본 중 하나를 뽑아 기록 후 다시 표본에 삽입
+    2. m번 반복
+    3. m번 재표본추출한 값의 평균을 계산
+    4. 1~3번을 K번 반복(K가 클수록 신뢰구간 추정이 정확해짐)
+    5. 평균에 대한 결과 K개를 사용하여 신뢰구간을 구함
+
+<center><img src="../img/Math/img11.png" width="80%" height="80%"></center>
+
+### Reference
+
+[4.2. Bootstrp - An Introduction to Statistical Learning](https://wikidocs.net/33014)   
+[부트스트랩 샘플링이란?](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=mathnstat&logNo=221404758083)   
+[DATA -12. 부트스트랩](https://bkshin.tistory.com/entry/DATA-12)   
+[공돌이의 수학정리노트](https://angeloyeo.github.io/2021/07/19/jackknife_and_bootstrap.html#%EA%B0%9C%EC%9A%94)
+
+---
+### 모집단의 수가 매우 적은 (수십개 이하) 케이스의 경우 어떤 방식으로 예측 모델을 수립할 수 있을까요?
+
+💡 **표본의 수가 적은 경우라도 모집단이 정규분포를 따른 다면 모수적 방법을 통해 예측 모델을 수립할 수 있다.   
+하지만 정규분포를 따르는지 알 수 없다면 Shapiro-Wilk 검정 등의 모집단 정규성 검증을 통해 정규분포를 따르는지 검증해볼 수 있고 검증도 되지 않는다면 이때는 비모수적인 방법을 사용해야한다.**
+
+<center><img src="../img/Math/img12.png" width="80%" height="80%"></center>
+
+- 정규성 검정 → 표본을 통해 모집단이 정규 분포하는지 검정하는 것
+    - Null Hypothesis : 모집단이 정규분포를 이루고 있다고 검정
+    - Alternative Hypothesis : 모집단이 정규분포를 이루고 있지 않다고 검정
+    - 검정방법
+        - Shapiro-Wilk 검정 : 소표본에 평균을 활용한 검정을 위한 모집단 정규성 검정에 적합
+        - Kolmogorov-Smirnov 검정 : 소표본에 평균을 활용한 검정을 위한 모집단 정규성 검정에 적합
+- 비모수적 방법론
+: 비모수적 방법은 검정력이 다소 떨어지고, 크기의 차이를 보여주지 못하는 대신에 표본수가 작은 경우이거나 순위 척도인 경우를 비롯하여 숫자로 되어 있는 모든 경우에 적용을 할 수 있는 장점이 있다.
+    - KNN, Random forest, Decision Tree
+    - 부호 검정(sign test): 분포의 중앙값에 대하여 검정하는 기법으로, 표본자료보다 큰 것은 + 작은 것은 - 를 부여하여 개수를 비교
+    - 런(run) 검정: 어떤 패턴이나 경향이 없이 랜덤하게 구성되었다는 귀무가설을 검정하기 위한 방법, 표본 데이터를 서로 배타적인 2개의 범주로 나누어 접근
+    - Wilcoxon 순위합 검정(Mann-Whitney 검정): 두 모집단의 중앙값이 같다는 귀무가설에 대하여 비모수적으로 검정하는 방법으로 두 모집단은 서로 독립이어야 함.
+    - Wilcoxon 부호 있는 순위 검정: 두 모집단이 독립이 아닐 시 사용
+    - Kruskal-Wallis 검정: 3개 이상의 모집단을 비교하는데 사용되는 비모수 검정
+
+### Reference
+
+[비모수적 방법 - Medical Programmer](http://theyoonicon.com/%EB%B9%84%EB%AA%A8%EC%88%98%EC%A0%81-%EB%B0%A9%EB%B2%95/)   
+[표본 크기가 작을 때(n<30)는 어떻게 해야 하죠? 정규성 검정은 꼭? 이걸 모르면 궁금증의 지옥행](https://recipesds.tistory.com/entry/%ED%91%9C%EB%B3%B8-%EC%88%98%EA%B0%80-%EC%9E%91%EC%9D%84-%EB%95%8C%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%98%EC%A3%A0-%EC%A0%95%EA%B7%9C%EC%84%B1-%EA%B2%80%EC%A0%95%EC%9D%80-%EA%BC%AD-%EC%9D%B4%EA%B1%B8-%EB%AA%A8%EB%A5%B4%EB%A9%B4-%EA%B6%81%EA%B8%88%EC%A6%9D%EC%9D%98-%EC%A7%80%EC%98%A5-%ED%96%89)   
+[[통계이론] 모수적 방법 vs 비모수적 방법](https://zzanhtt.tistory.com/18)    
+---
