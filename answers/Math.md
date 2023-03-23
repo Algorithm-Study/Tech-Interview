@@ -498,10 +498,6 @@ $$
 - Gain(A) 값이 클수록 정보 이득이 큰 것이고, 변별력이 좋다는 것을 의미한다.
 
 #### Reference
-<<<<<<< HEAD
-
-=======
->>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
 - [결정 트리 설명 및 분류기 구현](https://needjarvis.tistory.com/709)
 - [엔트로피 이해하기](https://needjarvis.tistory.com/716)
 - [정보 이득 이해하기](https://needjarvis.tistory.com/718)
@@ -534,10 +530,6 @@ $$
     - 인공신경망의 경우 모수적 모델과 비모수적 모델 두 방법이 혼재한다.
 
 #### Reference
-<<<<<<< HEAD
-
-=======
->>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
 - [모수 모델 vs. 비모수 모델 머신러닝 모델링 관점에서](https://brunch.co.kr/@seoungbumkim/7)
 - [통계용어 - 모수적, 비모수적 방법](https://datacookbook.kr/64)
 - [제 13장. 비모수적 방법(Distribution-free Method)](http://contents.kocw.net/KOCW/document/2013/koreasejong/HongSungsik4/13.pdf)
@@ -564,10 +556,6 @@ $$
 - 가능도는 어떤 시행(trial, experiment)을 충분히 수행한 뒤 그 결과(sample)를 토대로 경우의 수의 가능성을 도출하는 것. 아무리 충분히 수행해도 어디까지나 추론(inference)이기 때문에 가능성의 합이 1이 되지 않을 수도 있다.
 
 #### Reference
-<<<<<<< HEAD
-
-=======
->>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
 - [StatQuest: Maximum Likelihood 최대 우도 추정, 매우 깔끔하게 설명되었습니다!!!](https://www.youtube.com/watch?v=XepXtl9YKwc&t=252s)
 - [[기초통계] 확률(Probability) vs 우도(가능도,Likelihood)](https://dlearner.tistory.com/43)
 - [[수리통계학] 가능도는 확률과 어떻게 다르지?](https://blog.naver.com/sw4r/221361565730)
@@ -595,10 +583,7 @@ $$
 <center><img src="../img/Math/img11.png" width="80%" height="80%"></center>
 
 #### Reference
-<<<<<<< HEAD
 
-=======
->>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
 - [4.2. Bootstrp - An Introduction to Statistical Learning](https://wikidocs.net/33014)   
 - [부트스트랩 샘플링이란?](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=mathnstat&logNo=221404758083)   
 - [DATA -12. 부트스트랩](https://bkshin.tistory.com/entry/DATA-12)   
