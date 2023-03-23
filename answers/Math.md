@@ -498,6 +498,10 @@ $$
 - Gain(A) 값이 클수록 정보 이득이 큰 것이고, 변별력이 좋다는 것을 의미한다.
 
 #### Reference
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
 - [결정 트리 설명 및 분류기 구현](https://needjarvis.tistory.com/709)
 - [엔트로피 이해하기](https://needjarvis.tistory.com/716)
 - [정보 이득 이해하기](https://needjarvis.tistory.com/718)
@@ -530,6 +534,10 @@ $$
     - 인공신경망의 경우 모수적 모델과 비모수적 모델 두 방법이 혼재한다.
 
 #### Reference
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
 - [모수 모델 vs. 비모수 모델 머신러닝 모델링 관점에서](https://brunch.co.kr/@seoungbumkim/7)
 - [통계용어 - 모수적, 비모수적 방법](https://datacookbook.kr/64)
 - [제 13장. 비모수적 방법(Distribution-free Method)](http://contents.kocw.net/KOCW/document/2013/koreasejong/HongSungsik4/13.pdf)
@@ -556,6 +564,10 @@ $$
 - 가능도는 어떤 시행(trial, experiment)을 충분히 수행한 뒤 그 결과(sample)를 토대로 경우의 수의 가능성을 도출하는 것. 아무리 충분히 수행해도 어디까지나 추론(inference)이기 때문에 가능성의 합이 1이 되지 않을 수도 있다.
 
 #### Reference
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
 - [StatQuest: Maximum Likelihood 최대 우도 추정, 매우 깔끔하게 설명되었습니다!!!](https://www.youtube.com/watch?v=XepXtl9YKwc&t=252s)
 - [[기초통계] 확률(Probability) vs 우도(가능도,Likelihood)](https://dlearner.tistory.com/43)
 - [[수리통계학] 가능도는 확률과 어떻게 다르지?](https://blog.naver.com/sw4r/221361565730)
@@ -583,6 +595,10 @@ $$
 <center><img src="../img/Math/img11.png" width="80%" height="80%"></center>
 
 #### Reference
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
 - [4.2. Bootstrp - An Introduction to Statistical Learning](https://wikidocs.net/33014)   
 - [부트스트랩 샘플링이란?](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=mathnstat&logNo=221404758083)   
 - [DATA -12. 부트스트랩](https://bkshin.tistory.com/entry/DATA-12)   
@@ -612,11 +628,132 @@ $$
     - Kruskal-Wallis 검정: 3개 이상의 모집단을 비교하는데 사용되는 비모수 검정
 
 #### Reference
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
 - [비모수적 방법 - Medical Programmer](http://theyoonicon.com/%EB%B9%84%EB%AA%A8%EC%88%98%EC%A0%81-%EB%B0%A9%EB%B2%95/)   
 - [표본 크기가 작을 때(n<30)는 어떻게 해야 하죠? 정규성 검정은 꼭? 이걸 모르면 궁금증의 지옥행](https://recipesds.tistory.com/entry/%ED%91%9C%EB%B3%B8-%EC%88%98%EA%B0%80-%EC%9E%91%EC%9D%84-%EB%95%8C%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC-%ED%95%98%EC%A3%A0-%EC%A0%95%EA%B7%9C%EC%84%B1-%EA%B2%80%EC%A0%95%EC%9D%80-%EA%BC%AD-%EC%9D%B4%EA%B1%B8-%EB%AA%A8%EB%A5%B4%EB%A9%B4-%EA%B6%81%EA%B8%88%EC%A6%9D%EC%9D%98-%EC%A7%80%EC%98%A5-%ED%96%89)   
 - [[통계이론] 모수적 방법 vs 비모수적 방법](https://zzanhtt.tistory.com/18)    
 ---
 
+<<<<<<< HEAD
+### Q. missing value가 있을 경우 채워야 할까요? 그 이유는 무엇인가요?
+
+>💡 결측치(결측값, Missing value)가 발생한 원인의 무작위성과 결측치와 변수와의 상관관계 정도에 따라 결측치를 대체, 삭제 여부를 판단한다.  
+결측치를 삭제할 때 결측이 일어난 변수를 버릴 것인지, 개체를 버릴 것인지 등을 결측과 변수의 상관관계를 통해 판단해야 한다.  
+또한 결측치를 대체하여 채운다면 평균값, 중앙값, 예측값 등 적절한 값으로 채워줘야 한다.
+
+결측치를 채우지 않는다면 장점으로는 결측치 제거를 통해서 강건한 모델 학습이 가능하다는 점이다. 하지만 단점으로는 정보의 부족이 발생할 수 있고, 이로 인해 오히려 나쁜 성능을 가진 모델을 얻게 될 수도 있다.
+
+
+- 결측치 발생 원인
+    - **완전 무작위 결측 (MCAR: Missing completely at random)** : 결측치의 발생이 다른 변수들과 아무런 상관이 없는 경우. (전산오류, 사람의 실수 등으로 발생)
+    - **무작위 결측 (MAR: Missing at random)** : 결측치의 발생이 특정 변수와 관련되어 일어나지만, 그 변수의 결과와는 관련이 없는 경우 (ex. 우울증에 대한 설문조사를 할 때 남성은 응답을 꺼리는(응답 누락) 경향이 있지만, 그것이 우울증 여부와는 관련이 없음)
+    - **비무작위 결측 (MNAR: Missing not at random)** : 결측치의 발생이 다른 변수와 관련 있는 경우 (ex. 위의 예에서 남성의 우울증 설문조사 참여율(응답률)이 우울증의 정도와 관련있는 경우)
+
+<center><img src="../img/Math/img16.png" width="80%" height="80%"></center>
+
+
+- 결측치 처리 방법
+    - 대체
+        - 단순 대체(Single Imputation)
+            - 평균값, 중앙값 대체: Mean, Median, Mode 등으로 대체(연속형)
+            - 최빈값으로 채우기(카테고리형)
+            - 가장 마지막에 확인한 값으로 채우기(시계열)
+            - 회귀 대체: 관측된 데이터로 1차 회귀선과 ML 알고리즘 등의 예측 모델을 활용하여 예측값을 구하여 결측값 대체(KNN)
+            - 확률 모형 값으로 대체: 관측된 값들의 평균과 표준편차를 계산하여 확률 모형의 무작위 결과를 통해서 결측값을 대체
+            - Hot deck: 연구중인 자료에서 표본을 바탕으로 비슷한 규칙을 찾아 결측치를 대체
+            - Cold Deck: 외부 출처에서 비슷한 연구를 찾아 성향을 찾고 결측치를 대체
+            - Substitution: 현재 sample에 포함되지 않은 다른 sample의 값으로 결측치를 대체
+            - Datawig 파이썬 라이브러리를 통해 대체
+        - 다중 대체(Multiple Imputation)
+            - Simple Imputation을 여러번 반복해서 결측값을 계산하고 결측값의 표본을 만듦. 만들어진 표본의 분포를 통해 확률적으로 결측값을 대체
+    - 삭제
+        - 변수 제거
+            - **변수 제거**를 고려할 때 중요한 것은 **변수의 중요도**와 **다른 변수와의 관계성**이다. **1) 상대적으로 중요도가 낮다고 생각**되거나 **2) 해당 변수와 상관관계가 높은, 값이 온전히 보존된 다른 변수가 있다면** 분석에서 결측값이 포함된 변수를 제외하는 방법을 고려해 볼 수 있다. 좀더 쉬운 기준은 **3) 변수에 결측값이 얼마나 포함되었는지 여부**다. 결측값이 차지하는 비중이 절반을 넘어 간다면 크게 고민할 필요없이 변수를 삭제하는 것을 추천한다. (변수에 결측값이 많다는 의미는 대개의 경우 제대로 관리되는 변수가 아니거나 중요도가 낮을 가능성이 높기 때문)
+        - 개체 제거(Listwise Deletion)
+            - 특정행을 통째로 삭제
+            - **개체를 제거**하는 경우는 기준이 조금 다르다. 개체(표본) 수에 비해 **결측치를 가진 개체의 수나 비중이 확연히 적을 경우** 제거를 고려해 볼 수도 있다. (이 기준은 보통 10% 미만 수준에서 논의가 이루어지고 있습니다.)
+            - Sample의 수가 적다면 표본 축소로 인한 문제가 발생할 수도 있음
+        - 한쌍 제거(Pairwise Deletion)
+            - 특정 값을 삭제
+
+<center><img src="../img/Math/img17.png" width="80%" height="80%"></center>
+
+
+#### Reference
+
+- [7 Ways to Handle Missing Values in Machine Learning](https://towardsdatascience.com/7-ways-to-handle-missing-values-in-machine-learning-1a6326adf79e)
+- [결측값 결측치 종류 및 대체 (MCAR MAR MNAR) [빅공남! 통계 같이 공부해요] - 빅공남](https://seeyapangpang.tistory.com/9)
+- [클러스터링 분석 - (2) 결측값](https://hweejin.tistory.com/entry/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81-%EB%B6%84%EC%84%9D-2-%EA%B2%B0%EC%B8%A1%EA%B0%92)
+- [Roles of Imputation Methods for Filling the Missing Values: A Review](http://www.aensiweb.com/old/aeb/2013/3861-3869.pdf)
+
+---
+
+### Q. 아웃라이어의 판단하는 기준은 무엇인가요?
+
+
+>💡 아웃라이어(Outlier)는 데이터 분포를 보았을 때 비정상적인 수치, 분포를 가지고 있는 값을 뜻한다.  
+아웃라이어 탐지 방법은 크게 통계적 기법, 시각화, 머신러닝/알고리즘/모델링 등의 분석기법 활용으로 3가지로 나눌 수 있고 탐지 방법에 따라 이상치 기준 또한 다르다.
+>  
+>이상치를 탐지하는 방법에는 표준편차(ESD), IQR(Interquantile Range), Isolation Forest 등이 있다.
+
+
+- 통계적 기법
+    - ESD(Estreme, Studentized Deviation)
+        - 데이터가 정규분포를 따른다고 했을 때 표준편차를 이용해 이상치를 탐지하는 방법이다.
+        - 평균에서 좌우로 $3\sigma$보다 더 떨어진 범위를 이상치로 본다
+        - Z-score (표준편차, Standard Score, Sigma, Standard Deviation) 라고도 불린다.
+    
+<center><img src="../img/Math/img18.png" width="80%" height="80%"></center>
+    
+```python
+def determine_outlier_thresholds_std(dataframe, col_name):
+    upper_boundary = dataframe[col_name].mean() + 3 * dataframe[col_name].std()
+    lower_boundary = dataframe[col_name].mean() - 3 * dataframe[col_name].std()
+    return lower_boundary, upper_boundary
+```
+    
+- 기하평균 활용
+    - 기하평균에서 좌우로 $2.5\sigma$만큼 보다 더 떨어진 범위를 이상치로 본다.
+- 사분위 편차(IQR(Interquartile Range) with Box plots)
+    - 박스플롯을 토대로 기준을 정하게 되고 (Q1 – 1.5 * IQR)보다 작거나 (Q3 + 1.5 * IQR)보다 큰 데이터는 이상치로 처리한다.
+    - 분포가 치우친 경우에도 잘 작동한다.
+    - IQR 은 Q3(75%) - Q1(25%) 사이에 존재하는 데이터를 의미한다.
+    - outlier ≥ Q3 + 1.5*IQR
+    - outlier ≤ Q1 - 1.5*IQR
+        
+```python
+def determine_outlier_thresholds_iqr(dataframe, col_name, th1=0.25, th3=0.75):
+    quartile1 = dataframe[col_name].quantile(th1)
+    quartile3 = dataframe[col_name].quantile(th3)
+    iqr = quartile3 - quartile1
+    upper_limit = quartile3 + 1.5 * iqr
+    lower_limit = quartile1 - 1.5 * iqr
+    return lower_limit, upper_limit
+```
+        
+- 시각화를 활용하여 분포를 눈으로 보고 이상치 판별
+    - 히스토그램
+    - 확률밀도함수
+    - Box Plot
+- 머신러닝, 알고리즘 모델링 등 분석기법 활용
+    - KNN
+    - Mahalanobis Distance
+    - LOF(Local Outlier Factor)
+    - iForest(Isolation Forest)
+        - 데이터셋을 결정 트리 형태로 표현해 정상 데이터를 분리하기 위해서는 트리의 깊이가 깊어지고 반대로 이상치는 트리의 상단에서 분리할 수 있다는 개념을 이용한다. 즉, 데이터에서 이상치를 분리하는 것이 더 쉽다는 것이다.
+
+#### Reference
+
+- [Removing Outliers. Understanding How and What behind the Magic.](https://medium.com/analytics-vidhya/removing-outliers-understanding-how-and-what-behind-the-magic-18a78ab480ff)
+- [이상값 이상치 Outlier 탐지 [빅공남! 통계 같이 공부해요] - 빅공남](https://seeyapangpang.tistory.com/10)
+- [데이터 이상치(Outlier)의 기준은 무엇일까?](https://gannigoing.medium.com/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9D%B4%EC%83%81%EC%B9%98-outlier-%EC%9D%98-%EA%B8%B0%EC%A4%80%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C-f11f60bf901a)
+- [이상치(Outlier) 판단 기준](https://esj205.oopy.io/72782730-23e4-43cf-8799-f3cdcbcb57b9)
+
+---
+=======
 ### 베이지안과 프리퀀티스트 간의 입장차이를 설명해주실 수 있나요?
 
 **베이지안**은 현재까지 얻은 표본을 업데이트 하여 사후확률을 계산한다. 모수가 고정되어 있지 않고 데이터 수집에 의해 바뀔 수 있다고 생각한다.
@@ -713,3 +850,4 @@ Any mean을 기준으로 오른쪽은 대립가설을 채택하고, 왼쪽은 �
 - [Statistical Power, Clearly Explained!!!](https://www.youtube.com/watch?v=Rsc5znwR5FA)
 - [Power Analysis, Clearly Explained!!!](https://www.youtube.com/watch?v=VX_M3tIyiYk)
 - [위키백과/검정력](https://ko.wikipedia.org/wiki/%EA%B2%80%EC%A0%95%EB%A0%A5)
+>>>>>>> 5e3a472f8ee4a6029cd4f7bfac05db3444d7e338
