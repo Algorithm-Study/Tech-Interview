@@ -834,3 +834,92 @@ def determine_outlier_thresholds_iqr(dataframe, col_name, th1=0.25, th3=0.75):
 - [이상치(Outlier) 판단 기준](https://esj205.oopy.io/72782730-23e4-43cf-8799-f3cdcbcb57b9)
 
 ---
+
+### Q. 필요한 표본의 크기를 어떻게 계산합니까?
+
+
+>💡 모집단의 크기(유한, 무한), Z score, 오차한계, 표본비율 등을 이용하여 표본 크기 계산 가능
+
+- 적절한 표본 크기 계산을 위해 필요한 값 **for Statistical Power**
+    - 목표하는 Power
+    - p value(threshold for significance)
+    - effectsize(효과 크기)
+        
+        $$
+        d = {The \, estimated \, difference\, in \, the \, means\over Pooled \, estimated \, standard \, deviations}
+        $$
+        
+- 표본 크기 변수 고려하기
+    - 모집단 크기**(N: 모집단의 크기, e: 요구정밀도, P: 모집단의 비율, k: 신뢰수준)**
+        - 유한모집단일 때 표본 크기 n은
+            
+            $$
+            n \ge \dfrac {N}{(\dfrac e k)^2 \dfrac {N-1}{P(1-P)}+1}
+            $$
+            
+        - 무한모집단일 때 표본 크기 n은
+            
+            $$
+            n \ge \dfrac {1}{(\dfrac e k)^2 \dfrac {1}{P(1-P)}}
+            $$
+            
+        
+        $$
+        n = Z^2 \dfrac {\sigma^2}{d^2}\, (Z: \,신뢰수준, \, \sigma: \, 표준편차, \,d: \, 허용오차)
+        $$
+        
+    - 오차 범위
+    - 신뢰도
+    - 표준편차
+- 표본 크기 계산하기
+    - Z score 찾기
+    - 표본 크기 식 사용하기
+
+
+#### Reference
+
+- [Power Analysis, Clearly Explained!!!](https://www.youtube.com/watch?t=714&v=VX_M3tIyiYk&feature=youtu.be)
+- [올바른 표본 크기를 설정하는 방법](https://www.qualtrics.com/kr/experience-management/research/determine-sample-size/)
+- [[R] 추정(estimation) + (표본크기 결정)](https://kerpect.tistory.com/145)
+- [모평균의 신뢰구간 표본크기의 결정](https://math100.tistory.com/56)
+- [샘플 크기 계산기](https://ko.surveymonkey.com/mp/sample-size-calculator/)
+
+---
+
+### Q. Bias를 통제하는 방법은 무엇입니까?
+
+
+>💡 모델의 크기를 증가 시키거나 수정 시키는 등의 모델 변경, 오류평가시 얻은 지식을 기반으로 입력 특성 수정, 정규화 축소 및 제거, 학습 데이터 추가 등을 통해 Bias를 통제할 수 있다.
+
+- **Bias 종류 및 통제 방법**
+1. 데이터 수집 과정에서 발생한 bias <br>
+    : 데이터 수집 과정에서 해당 도메인 지식을 가지고 적합한 feature를 수집해야 함
+2. 전처리 과정에서 발생한 bias <br>
+    : 데이터 별 적합한 전처리 과정을 진행해야 함(Data Cleaning, 비식별화)
+3. Feature Engineering bias <br>
+    : 데이터 정규화를 통해 feature간 scale이 조정되어야 함
+4. Data selection bias <br>
+    : train/test 데이터 셋 분활 과정에서 적절하게 나누어야 함
+5. Model Training bias <br>
+    : 모델 특성을 고려하여 데이터 셋과 궁합이 맞는 모델을 사용해야 함
+6. Model Validation bias <br>
+    : 다양한 metric을 고려해서 성능을 평가해야 함(정확도 만으로는 문제가 있을 수 있음)
+- **Bias와 Variance의 관계**
+    <center><img src="../img/Math/img19.png" width="80%" height="80%"></center>
+    
+    - Low Bias & Low Variance <br>
+        : 예측값들이 정답 근방에 분포되어 있고(**bias가 낮음**) 예측값들이 서로 몰려 있습니다. (**variance가 낮음**)
+    - Low Bias & High Variance <br>
+        : 예측값들이 정답 근방에 분포되어 있으나 (**bias가 낮음**) 예측값들이 서로 흩어져 있습니다. (**variance가 높음**)
+    - High Bias & Low Variance <br>
+        : 예측값들이 정답에서 떨어져 있고 (**bias가 높음**) 예측값들이 서로 몰려 있습니다. (**variance가 낮음**)
+    - High Bias & High Variance <br>
+        : 예측값들이 정답에서 떨어져 있고 (**bias가 높음**) 예측값들이 서로 흩어져 있습니다. (**variance가 높음**)
+
+
+#### Reference
+
+- [How To Reduce Bias in Machine Learning](https://www.spiceworks.com/tech/artificial-intelligence/guest-article/how-to-reduce-bias-in-machine-learning/)
+- [[MLY] avoidable bias를 줄이는 방법들](https://talkingaboutme.tistory.com/entry/MLY-avoidable-bias%EB%A5%BC-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%A9%EB%B2%95%EB%93%A4?category=538748)
+- [머신러닝에서의 Bias와 Variance - gaussian37](https://gaussian37.github.io/machine-learning-concept-bias_and_variance/)
+- [머신러닝에서 편향(Bias)을 제거하는 6가지 방법](https://blog.naver.com/PostView.nhn?blogId=angryking&logNo=222219949700&categoryNo=21&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search)
