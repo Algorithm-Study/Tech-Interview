@@ -907,9 +907,11 @@ $$n = Z^2 \dfrac {\sigma^2}{d^2}, (Z:신뢰수준,\ \sigma: 표준편차,\ d:허
 $$
 함수:a(\theta)=\theta^t(1-\theta)^h
 $$
+
 $$
 도함수: {d \over d\theta}\theta^t(1-\theta)^h = \theta^{t-1}(1-\theta)^{h-1}[(1-\theta)t - h\theta] 
 $$
+
 $$
 2차\ 도함수: {d^2 \over d\theta^2}\theta^t(1-\theta)^h = (1-\theta)^{h-2}\theta^{t-2}[[(t-1)(1-\theta)-\theta(h-1)][t(1-\theta)-h\theta]-(t+h)\theta(1-\theta)]
 $$
@@ -919,6 +921,7 @@ $$
 $$
 도함수:{{d}\over{d \theta}}\log(\theta^t(1-\theta)^h) = {t \over \theta} -{h \over 1-\theta}
 $$
+
 $$
 2차\ 도함수:{d \over d\theta}({t\over \theta} - {h \over 1-\theta})= -({t\over \theta^2} + {h \over (1-\theta)^2})
 $$
