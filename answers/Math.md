@@ -823,28 +823,26 @@ def determine_outlier_thresholds_iqr(dataframe, col_name, th1=0.25, th3=0.75):
     - p value(threshold for significance)
     - effectsize(효과 크기)
         
-        $$
-        d = {The \, estimated \, difference\, in \, the \, means\over Pooled \, estimated \, standard \, deviations}
-        $$
+$$
+d = {The\ estimated\ difference\ in\ the\ means \over Pooled\ estimated\ standard\ deviations}
+$$
         
 - 표본 크기 변수 고려하기
-    - 모집단 크기**(N: 모집단의 크기, e: 요구정밀도, P: 모집단의 비율, k: 신뢰수준)**
+    - 모집단 크기 **(N: 모집단의 크기, e: 요구정밀도, P: 모집단의 비율, k: 신뢰수준)**
         - 유한모집단일 때 표본 크기 n은
+$$
+n \ge \dfrac {N}{(\dfrac e k)^2 \dfrac {N-1}{P(1-P)}+1}
+$$
             
-            $$
-            n \ge \dfrac {N}{(\dfrac e k)^2 \dfrac {N-1}{P(1-P)}+1}
-            $$
-            
-        - 무한모집단일 때 표본 크기 n은
-            
-            $$
-            n \ge \dfrac {1}{(\dfrac e k)^2 \dfrac {1}{P(1-P)}}
-            $$
+        - 무한모집단일 때 표본 크기 n은\
+$$
+n \ge \dfrac {1}{(\dfrac e k)^2 \dfrac {1}{P(1-P)}}
+$$
             
         
-        $$
-        n = Z^2 \dfrac {\sigma^2}{d^2}\, (Z: \,신뢰수준, \, \sigma: \, 표준편차, \,d: \, 허용오차)
-        $$
+$$
+n = Z^2 \dfrac {\sigma^2}{d^2}\, (Z:신뢰수준,\ \sigma: 표준편차,\ d:허용오차)
+$$
         
     - 오차 범위
     - 신뢰도
@@ -917,13 +915,21 @@ def determine_outlier_thresholds_iqr(dataframe, col_name, th1=0.25, th3=0.75):
 원본 함수와 도함수
 
 $$
-함수:a(\theta)=\theta^t(1-\theta)^h\\ 도함수: {d \over d\theta}\theta^t(1-\theta)^h = \theta^{t-1}(1-\theta)^{h-1}[(1-\theta)t - h\theta] \\ 2차\ 도함수: {d^2 \over d\theta^2}\theta^t(1-\theta)^h = (1-\theta)^{h-2}\theta^{t-2}[[(t-1)(1-\theta)-\theta(h-1)][t(1-\theta)-h\theta]-(t+h)\theta(1-\theta)]
+함수:a(\theta)=\theta^t(1-\theta)^h
+$$
+$$
+도함수: {d \over d\theta}\theta^t(1-\theta)^h = \theta^{t-1}(1-\theta)^{h-1}[(1-\theta)t - h\theta] 
+$$
+$$
+2차\ 도함수: {d^2 \over d\theta^2}\theta^t(1-\theta)^h = (1-\theta)^{h-2}\theta^{t-2}[[(t-1)(1-\theta)-\theta(h-1)][t(1-\theta)-h\theta]-(t+h)\theta(1-\theta)]
 $$
 
 로그를 취한 도함수
 
 $$
-도함수:{{d}\over{d \theta}}\log(\theta^t(1-\theta)^h) = {t \over \theta} -{h \over 1-\theta}\\ 
+도함수:{{d}\over{d \theta}}\log(\theta^t(1-\theta)^h) = {t \over \theta} -{h \over 1-\theta}
+$$
+$$
 2차\ 도함수:{d \over d\theta}({t\over \theta} - {h \over 1-\theta})= -({t\over \theta^2} + {h \over (1-\theta)^2})
 $$
 
@@ -999,7 +1005,7 @@ $$
     F분포는 정규분포를 이루는 모집단에서 독립적으로 추출한 표본들의 분산비율이 나타내는 연속 확률 분포이다. 다시 말하면 카이제곱분포를 따르는 독립적인 두 개의 확률 변수의 표본을 구한 뒤 각각 표본의 수 만큼 나눈 뒤 비율을 구하면 F 분포가 된다. 2개 이상의 표본 평균들이 동일한 모평균을 가진 집단에서 추출되었는지 아니면 서로 다른 모집단에서 추출되는 것인지를 판단하기 위하여 사용된다.
 
 $$
-f(x;N_1,N_2) = {\sqrt{(N_1x)^{N_1}N_2^{N_2}\over(N_1x+N_2)^{N_1+N_2}} \over x \Beta({N_1\over2},{N_2\over2})}
+f(x;N_1,N_2) = {\sqrt{(N_1x)^{N_1}N_2^{N_2}\over(N_1x+N_2)^{N_1+N_2}} \over x\Beta({N_1\over2},{N_2\over2})}
 $$
 
 - 베타 분포
