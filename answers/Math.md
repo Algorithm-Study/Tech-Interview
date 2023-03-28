@@ -828,22 +828,12 @@ d = {The\ estimated\ difference\ in\ the\ means \over Pooled\ estimated\ standar
 $$
         
 - 표본 크기 변수 고려하기
-    - 모집단 크기 **(N: 모집단의 크기, e: 요구정밀도, P: 모집단의 비율, k: 신뢰수준)**
+    - 모집단 크기 (N: 모집단의 크기, e: 요구정밀도, P: 모집단의 비율, k: 신뢰수준)
         - 유한모집단일 때 표본 크기 n은
-$$
-n \ge \dfrac {N}{(\dfrac e k)^2 \dfrac {N-1}{P(1-P)}+1}
-$$
-            
-        - 무한모집단일 때 표본 크기 n은\
-$$
-n \ge \dfrac {1}{(\dfrac e k)^2 \dfrac {1}{P(1-P)}}
-$$
-            
-        
-$$
-n = Z^2 \dfrac {\sigma^2}{d^2}\, (Z:신뢰수준,\ \sigma: 표준편차,\ d:허용오차)
-$$
-        
+$$n \ge \dfrac {N}{(\dfrac e k)^2 \dfrac {N-1}{P(1-P)}+1}$$
+        - 무한모집단일 때 표본 크기 n은
+$$n \ge \dfrac {1}{(\dfrac e k)^2 \dfrac {1}{P(1-P)}}$$
+$$n = Z^2 \dfrac {\sigma^2}{d^2}, (Z:신뢰수준,\ \sigma: 표준편차,\ d:허용오차)$$
     - 오차 범위
     - 신뢰도
     - 표준편차
@@ -1005,7 +995,7 @@ $$
     F분포는 정규분포를 이루는 모집단에서 독립적으로 추출한 표본들의 분산비율이 나타내는 연속 확률 분포이다. 다시 말하면 카이제곱분포를 따르는 독립적인 두 개의 확률 변수의 표본을 구한 뒤 각각 표본의 수 만큼 나눈 뒤 비율을 구하면 F 분포가 된다. 2개 이상의 표본 평균들이 동일한 모평균을 가진 집단에서 추출되었는지 아니면 서로 다른 모집단에서 추출되는 것인지를 판단하기 위하여 사용된다.
 
 $$
-f(x;N_1,N_2) = {\sqrt{(N_1x)^{N_1}N_2^{N_2}\over(N_1x+N_2)^{N_1+N_2}} \over x\Beta({N_1\over2},{N_2\over2})}
+f(x;N_1,N_2) = {\sqrt{(N_1x)^{N_1}N_2^{N_2}\over(N_1x+N_2)^{N_1+N_2}} \over x\rm B({N_1\over2},{N_2\over2})}
 $$
 
 - 베타 분포
@@ -1014,14 +1004,12 @@ $$
 
     베타함수 - 이항계수를 실수 범위까지 확장한 것
     
-    $$
-    베타함수: \Beta(\alpha, \beta)= {\Gamma(\alpha)\Gamma(\beta) \over \Gamma(\alpha + \beta)}= \int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx\ (단, \alpha,\beta>0이다.)
-    $$
-    
-
-
 $$
-Beta(x;a, b)={\Gamma(\alpha+\beta) \over \Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1}
+베타함수: \rm B(\alpha, \beta)= {\Gamma(\alpha)\Gamma(\beta) \over \Gamma(\alpha + \beta)}= \int_0^1 x^{\alpha-1}(1-x)^{\beta-1}dx\ (단, \alpha,\beta>0이다.)
+$$
+    
+$$
+\rm B(x;a, b)={\Gamma(\alpha+\beta) \over \Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1}
 $$
 
 - 감마분포
@@ -1030,9 +1018,9 @@ $$
 
     감마함수 - 팩토리얼 함수를 복소수까지 확장해서 만든 함수
     
-    $$
-    감마함수: \Gamma(\alpha)=\int_0^\infin x^{\alpha-1}e^{-x}dx
-    $$
+$$
+감마함수: \Gamma(\alpha)=\int_0^\infty x^{\alpha-1}e^{-x}dx
+$$
     
 
 
