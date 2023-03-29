@@ -1038,3 +1038,38 @@ $$
 - [1st ed., Truth in Engineering](https://blog.naver.com/mykepzzang)
 
 ---
+### 출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문해주세요. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?
+
+> 💡 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했을 때, 실제로 비가 내릴 확률은
+>$$
+>P(rain|all\_yes) = {p \cdot {8 \over 27} \over {p\cdot{8 \over 27}} + (1-p)\cdot {1 \over 27}}
+>$$
+>
+
+모든 친구들이 비가 온다고 대답 했으므로
+
+모두 그렇습니다 라고 대답하는 확률 = 모두 사실대로 이야기할 확률(비가 올 때) + 모두 거짓으로 이야기할 확률(비가 안 올 때)
+
+비가 올 확률을 p 라고 하고, 비가 실제로 왔을 때 친구들이 모두 그렇습니다 라고 할 확률은
+$P(all\_yes\cap rain) = p \cdot {8 \over 27}$
+
+비가 실제로 안왔을 때 모두 그렇습니다 라고 할 확률은
+
+$P(all\_yes\ \cap \sim rain) = (1-p)\cdot{1 \over 27}$
+
+비가 올 확률이 p 고 친구들이 모두 그렇습니다라고 했을 때 비가 실제로 왔을 확률은
+
+
+$$
+P(rain|all\_yes) = {P(all\_yes\cap rain) \over P(all\_yes)}
+$$
+
+$$
+P(rain|all\_yes) = {P(all\_yes\cap rain) \over P(all\_yes\cap rain) + P(all\_yes\ \cap \sim rain)}
+$$
+
+$$
+P(rain|all\_yes) = {p \cdot {8 \over 27} \over {p\cdot{8 \over 27}} + (1-p)\cdot {1 \over 27}}
+$$
+
+#### Reference
