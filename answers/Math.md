@@ -1042,7 +1042,7 @@ $$
 
 > 💡 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했을 때, 비가 내릴 확률을 p 라고 한다면 실제로 비가 내릴 확률은
 > 
-> $$P(rain|all\_yes) = {p \cdot {8 \over 27} \over {p\cdot{8 \over 27}} + (1-p)\cdot {1 \over 27}}$$
+> $$P(rain|all\ yes) = {p \cdot {8 \over 27} \over {p\cdot{8 \over 27}} + (1-p)\cdot {1 \over 27}}$$
 >
 
 모든 친구들이 비가 온다고 대답 했으므로
@@ -1050,25 +1050,26 @@ $$
 모두 그렇습니다 라고 대답하는 확률 = 모두 사실대로 이야기할 확률(비가 올 때) + 모두 거짓으로 이야기할 확률(비가 안 올 때)
 
 비가 올 확률을 p 라고 하고, 비가 실제로 왔을 때 친구들이 모두 그렇습니다 라고 할 확률은
-$P(all\_yes\cap rain) = p \cdot {8 \over 27}$
+
+$P(all\ yes\cap rain) = p \cdot {8 \over 27}$
 
 비가 실제로 안왔을 때 모두 그렇습니다 라고 할 확률은
 
-$P(all\_yes\ \cap \sim rain) = (1-p)\cdot{1 \over 27}$
+$P(all\  yes\ \cap \sim rain) = (1-p)\cdot{1 \over 27}$
 
 비가 올 확률이 p 고 친구들이 모두 그렇습니다라고 했을 때 비가 실제로 왔을 확률은
 
 
 $$
-P(rain|all\_yes) = {P(all\_yes\cap rain) \over P(all\_yes)}
+P(rain|all\ yes) = {P(all\ yes\cap rain) \over P(all\ yes)}
 $$
 
 $$
-P(rain|all\_yes) = {P(all\_yes\cap rain) \over P(all\_yes\cap rain) + P(all\_yes\ \cap \sim rain)}
+P(rain|all\ yes) = {P(all\ yes\cap rain) \over P(all\ yes\cap rain) + P(all\ yes\ \cap \sim rain)}
 $$
 
 $$
-P(rain|all\_yes) = {p \cdot {8 \over 27} \over {p\cdot{8 \over 27}} + (1-p)\cdot {1 \over 27}}
+P(rain|all\ yes) = {p \cdot {8 \over 27} \over {p\cdot{8 \over 27}} + (1-p)\cdot {1 \over 27}}
 $$
 
 #### Reference
