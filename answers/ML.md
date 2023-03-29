@@ -17,7 +17,7 @@
         - $FP+FN \over {TP +FP + TN + FN}$
     - Confusion Matrix
         
-        <center><img src="../img/ML/img0.png" width="60%" height="60%"></center>
+        <center><img src="../img/ML/img0.png" width="30%" height="30%"></center>
         
         - Positive, Negative는 모델의 예측을 나타는 것
         - True/False는 예측의 정답 여부를 나타내는 것
@@ -53,7 +53,7 @@
         - 특정 threshold를 설정
         - 예측의 순서에 의존적이며 절대값엔 의존적이지 않음
     
-    <center><img src="../img/ML/img2.png" width="40%" height="40%"> <img src="../img/ML/img3.png" width="50%" height="50%"></center>
+    <center><img src="../img/ML/img2.png" width="40%" height="40%"> <img src="../img/ML/img3.png" width="55%" height="55%"></center>
     
     - Precision Recall Curve
         - confidence 레벨에 대한 threshold 값의 변화에 따라 계산된 Precision 및 Recall을 그래프로 시각화한 것
@@ -121,10 +121,7 @@
     - Spearman Correlation Coefficient
         - 두 변수 간의 단조적 상관 관계를 계량화한 것
     - SMAPE (Symmetric Mean Absolute Percentage Error)
-    
-    $$
-    SMAPE = {100 \over n}  \times \displaystyle \sum^n_{i=1} {\lvert Y_i-\hat Y_i\rvert \over(\lvert Y_i\rvert + \lvert \hat Y_i\rvert) /2}
-    $$
+        - $SMAPE = {100 \over n}  \times \displaystyle \sum^n_{i=1} {\lvert Y_i-\hat Y_i\rvert \over(\lvert Y_i\rvert + \lvert \hat Y_i\rvert) /2}$
     
 
 #### Reference
