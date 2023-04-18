@@ -134,3 +134,48 @@
 - [Introduction to the precision-recall plot](https://classeval.wordpress.com/introduction/introduction-to-the-precision-recall-plot/)
 
 ---
+### Local Minima와 Global Minimum에 대해 설명해주세요.
+
+>💡 Gradient Descent 방법을 활용하여 Cost Function의 최솟값을 찾게 되는데 기울기가 0이 되는 점이 여러 개 존재할 수 있다. <br>
+Local Minima(극소값)은 주위의 모든 점의 함숫값 이하의 함숫값을 갖는 점의 함숫값이다. <br>
+Global Minimum(최솟값)은 정의역(x가 될 수 있는 범위)의 모든 점에서의 최소점의 함숫값을 의미한다.
+
+- **Example**
+   <center><img src="../img/ML/img6.png" width="70%" height="40%"></center>
+
+    - Global Minimum(최솟값)은 항상 Local Minima(극소값)이다.<br>
+    - 하지만 Local Minima(극소값)이 항상 Global Minimum(최솟값)이 되는 것은 아니다.<br>
+    - 아래 그림에서 A는 Global Minimum(최솟값)이고 E, G는 Local Minima(극소값)이다.<br>
+
+#### Reference
+- [위키피디아 - 극값](https://ko.wikipedia.org/wiki/%EA%B7%B9%EA%B0%92)
+- [Local Minima와 Global Minima에 대하여 설명해주세요](https://velog.io/@lswkim/Local-Minima%EC%99%80-Global-Minima%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [Maxima vs Minima and Global vs Local in Machine learning - Basic Concept](https://medium.com/@dilip.voleti/maxima-vs-minima-and-global-vs-local-in-machine-learning-basic-concept-741e760e9f80)
+
+---
+### 차원의 저주에 대해 설명해주세요.
+>💡 데이터를 잘 표현하는 예측 모델을 만들기 위해서는 다양한 차원이 필요합니다. 하지만 이런 차원이 증가할 수록 모델의 성능이 떨어지는 현상을 차원의 저주라고 일컫습니다.<br> 이런 현상이 발생하는 이유는 차원이 증가함에 따라 더 많은 차원을 표현할 수 있는 데이터가 필요해지고 기존 데이터로는 개별 차원마다 원활한 학습이 이루어지지 않기 때문입니다.
+
+- 차원은 높은데 적은 데이터 수를 가지고 모델을 학습시키게 되면 이 모델은 과대적합된 모델이 된다. 그 이유는 차원이 높아 그만큼 데이터를 설정하는 변수의 수가 많지만 데이터의 수는 적기 때문에 실제 데이터 차원에 해당 되는 공간의 많은 경우들을 확인할 수 없기 때문에 모델이 학습 데이터에 과적합된 학습을 하여 성능이 낮아진다.
+<center><img src="../img/ML/img7.png" width="70%" height="40%"></center>
+
+- 차원의 저주(Curse of dimensionality) 현상은 수치 분석, 샘플링, 조합, 기계 학습, 데이터 마이닝 및 데이터베이스와 같은 영역에서 발생한다. 이러한 문제의 공통 주제는 차원이 증가하면 공간의 부피가 너무 빨리 증가하여 사용 가능한 데이터가 희소해진다는 것이다. 신뢰할 수 있는 결과를 얻기 위해 필요한 데이터의 양이 차원에 따라 기하급수적으로 증가하는 경우가 많다. 
+    - 차원 = 변수의 수 = 축의 수
+        - 차원이 늘어난다 = 변수의 수가 많아진다 = 축의 개수가 많아진다 = 데이터의 공간이 커진다
+    - 1차원 공간에서의 1,000개의 데이터가 존재할 때, 1,000개 정도의 데이터만 있어도 빈 곳이 없다.
+
+    <center><img src="../img/ML/img8.png" width="70%" height="40%"></center>
+
+    - 2차원 영역을 다 채우기 위해서는 20,000개의 데이터가 필요
+    <center><img src="../img/ML/img9.png" width="45%" height="40%"> <img src="../img/ML/img10.png" width="45%" height="55%"></center>
+
+    - 3차원 영역을 다 채우기 위해서는 100,000개의 데이터가 필요
+    <center><img src="../img/ML/img11.png" width="45%" height="40%"> <img src="../img/ML/img12.png" width="45%" height="55%"></center>
+
+- 차원의 저주 해결방법
+
+    - 데이터 추가 수집
+    - 공간 벡터의 거리를 측정할 때 Euclidean distance 대신 Cosine Similarity 활용
+    - 차원 줄이기
+        - Forward-feature selection
+        - PCA/t-SNE
