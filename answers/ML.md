@@ -179,3 +179,11 @@ Global Minimum(최솟값)은 정의역(x가 될 수 있는 범위)의 모든 점
     - 차원 줄이기
         - Forward-feature selection
         - PCA/t-SNE
+
+#### Reference
+- [차원의 저주(Curse of dimensionality)란? - 자윰이의 성장일기](https://think-tech.tistory.com/9)
+- [[빅데이터] 차원의 저주(The curse of dimensionality)](https://think-tech.tistory.com/9)
+- [Curse of Dimensionality - A “Curse” to Machine Learning](https://towardsdatascience.com/curse-of-dimensionality-a-curse-to-machine-learning-c122ee33bfeb)
+- [차원의 저주](https://oi.readthedocs.io/en/latest/ml/curse_of_dimensionality.html)
+
+---
