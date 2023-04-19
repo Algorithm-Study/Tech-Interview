@@ -2,9 +2,7 @@
 
 ### 알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)
 
-
 >💡 metric은 크게 Classification metric과 Regression metric으로 나눌 수 있고 Classsification metric에는 Accuracy, F1 등이 있고 Regression metric에는 MSE, MASE 등이 있다
-
 
 - Classification
     - Accuracy (정확도)
@@ -123,7 +121,6 @@
     - SMAPE (Symmetric Mean Absolute Percentage Error)
         - $SMAPE = {100 \over n}  \times \displaystyle \sum^n_{i=1} {\lvert Y_i-\hat Y_i\rvert \over(\lvert Y_i\rvert + \lvert \hat Y_i\rvert) /2}$
     
-
 #### Reference
 
 - [[ML] Metric 종류](https://wooono.tistory.com/99)
@@ -134,6 +131,7 @@
 - [Introduction to the precision-recall plot](https://classeval.wordpress.com/introduction/introduction-to-the-precision-recall-plot/)
 
 ---
+
 ### Local Minima와 Global Minimum에 대해 설명해주세요.
 
 >💡 Gradient Descent 방법을 활용하여 Cost Function의 최솟값을 찾게 되는데 기울기가 0이 되는 점이 여러 개 존재할 수 있다. <br>
@@ -153,6 +151,7 @@ Global Minimum(최솟값)은 정의역(x가 될 수 있는 범위)의 모든 점
 - [Maxima vs Minima and Global vs Local in Machine learning - Basic Concept](https://medium.com/@dilip.voleti/maxima-vs-minima-and-global-vs-local-in-machine-learning-basic-concept-741e760e9f80)
 
 ---
+
 ### 차원의 저주에 대해 설명해주세요.
 >💡 데이터를 잘 표현하는 예측 모델을 만들기 위해서는 다양한 차원이 필요합니다. 하지만 이런 차원이 증가할 수록 모델의 성능이 떨어지는 현상을 차원의 저주라고 일컫습니다.<br> 이런 현상이 발생하는 이유는 차원이 증가함에 따라 더 많은 차원을 표현할 수 있는 데이터가 필요해지고 기존 데이터로는 개별 차원마다 원활한 학습이 이루어지지 않기 때문입니다.
 
@@ -187,3 +186,50 @@ Global Minimum(최솟값)은 정의역(x가 될 수 있는 범위)의 모든 점
 - [차원의 저주](https://oi.readthedocs.io/en/latest/ml/curse_of_dimensionality.html)
 
 ---
+
+### dimension reduction기법으로 보통 어떤 것들이 있나요?
+
+>💡 **Dimension reduction**은 **Feature extraction**, **Feature selection** 두 가지로 나눌 수 있습니다.
+>
+>**Feature selection**의 **장점**은 선택한 피처의 해석이 용이하다는 점이고 **단점**은 피처간 상관관계를 고려하기 어렵다는 점입니다. filter, wrapper, embedded methods와 같은 방법들이 해당됩니다.
+>
+>**Feature extraction**의 **장점**은 피처 간 상관관계를 고려하기 용이하고 피처의 개수를 많이 줄일 수 있다는 점이고 **단점**은 추출된 변수의 해석이 어렵다는 점입니다. 이러한 **Feature extraction**은 Linear, Non-Linear로 다시 나뉩니다.
+
+Feature selection
+
+- Filter
+    - 통계를 기반으로 greedy하게 차원을 축소하는 방법입니다. 예를 들어 대상과의 상관관계가 기준이 될 수 있습니다. 이 방법은 가장 빠르고 간단한 방법입니다.
+- Embedded
+    - 예측 알고리즘의 일부입니다. 예를 들어, 트리 기반 알고리즘은 본질적으로 데이터 세트 기능에 점수를 매기고 중요도에 따라 순위를 매깁니다. Lasso L1 정규화는 본질적으로 가중치를 0으로 떨어뜨림으로써 중복 기능을 제거합니다.
+- Wrapper
+    - 가장 유용한 기능을 식별하기 위해 기능의 하위 집합이 있는 Validation set에서 예측 알고리즘을 사용합니다. 최적의 하위 집합을 찾는 데에 많은 계산 비용이 요구됩니다. 래퍼 방법은 역방향/전방향 선택과 같은 탐욕적인 결정을 내립니다. 이 선택은 피쳐를 차례로 탐욕스럽게 제거/선택합니다.
+
+Feature Projection
+
+- Linear
+    - Original Feature를 선형으로 결합하여 Original data set을 더 적은 차원으로 압축합니다. 일반적인 방법에는 주성분 분석(PCA), 선형 판별 분석(LDA) 및 특이값 분해(SVD)가 포함됩니다.
+- Non-Linear
+    - 좀더 복잡하지만 Linear method로는 해결하기 힘들 때 유용한 차원 감소를 찾을 수 있습니다. 비선형 차원 감소 방법에는 커널 PCA, t-SNE, Autoencoders, Self-Organizing Maps, IsoMap 및 UMap이 포함됩니다.
+
+<center><img src="../img/ML/img13.png" width="70%" height="40%"></center>
+
+#### Reference
+
+- [11 Dimensionality reduction techniques you should know in 2021](https://towardsdatascience.com/11-dimensionality-reduction-techniques-you-should-know-in-2021-dcb9500d388b)
+- [What Is Dimensionality Reduction? Meaning, Techniques, and Examples](https://www.spiceworks.com/tech/artificial-intelligence/articles/what-is-dimensionality-reduction/)
+- [Applied Dimensionality Reduction — 3 Techniques using Python](https://www.learndatasci.com/tutorials/applied-dimensionality-reduction-techniques-using-python/)
+
+---
+
+### PCA는 차원 축소 기법이면서, 데이터 압축 기법이기도 하고, 노이즈 제거기법이기도 합니다. 왜 그런지 설명해주실 수 있나요?
+
+>💡 PCA(Principal Component Analysis, 주성분 분석)의 기본 개념은 주어진 벡터에서 선형 독립인 고유 벡터만을 남겨두고 차원 축소를 하고. 이때 상관성이 높은 독립 변수들을 N개의 선형 조합으로 만들어 변수의 개수를 요약, 압축하는 방법입니다.
+>
+>사영 후 원데이터의 분산을 최대한 보전할 수 있는 기저를 찾아 차원을 줄이므로 차원 축소 기법이며 그 결과 feature들의 수가 기존보다 작아지기 때문에 데이터 압축 기법입니다. PCA 이후 정보 설명력이 높은 주성분들만 선택하고 정보 설명력이 낮은, 노이즈로 구성된 변수들은 배제하기 때문에 노이즈 제거 기법이기도 합니다. (**노이즈를 완전 제거하지는 못함!**)
+
+<center><img src="../img/ML/img14.png" width="70%" height="40%"></center>
+
+#### Reference
+
+- [[선형대수학 #6] 주성분분석(PCA)의 이해와 활용](https://darkpgmr.tistory.com/110)
+- [[Machine learning] 차원축소, PCA, SVD, LSA, LDA, MF 간단정리 (day1 / 201009)](https://huidea.tistory.com/126)
