@@ -290,7 +290,7 @@ Feature Projection
 >
 >이러한 Markov Chain은 MCMC(Markov Chain Monte Carlo sampling)에 활용됩니다.
 
-<center><img src="../img/ML/img16.png" width="60%" height="60%"></center>
+<center><img src="../img/ML/img16.png" width="45%" height="45%"></center>
 
 - MCMC
     - Markov Chain을 이용한 Monte Carlo 방법으로 이전의 샘플 추출이 다음 샘플 추출에 영향을 미침
