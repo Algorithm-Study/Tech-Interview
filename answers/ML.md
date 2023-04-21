@@ -308,9 +308,7 @@ Feature Projection
 
 ### 텍스트 더미에서 주제를 추출해야 합니다. 어떤 방식으로 접근해 나가시겠나요?
 
-<aside>
-💡 텍스트 데이터 내 단어들의 빈도를 통계적으로 분석하여 전체 데이터를 관통하는 잠재적 주제, 즉 토픽들을 자동으로 추출 분류할 수 있습니다. 이러한 방법론을 Topic Modeling이라고 합니다. Topic Modeling에는 Latent Semantic Analysis (LSA), Probabilistic LSA(pLSA), Latent Dirichlet Allocation(LDA), Correlated topic model(CTM), Structural topic model(STM) 등이 있습니다.
-</aside>
+>💡 텍스트 데이터 내 단어들의 빈도를 통계적으로 분석하여 전체 데이터를 관통하는 잠재적 주제, 즉 토픽들을 자동으로 추출 분류할 수 있습니다. 이러한 방법론을 Topic Modeling이라고 합니다. Topic Modeling에는 Latent Semantic Analysis (LSA), Probabilistic LSA(pLSA), Latent Dirichlet Allocation(LDA), Correlated topic model(CTM), Structural topic model(STM) 등이 있습니다.
 
 - Latent Semantic Analysis(LSA, 비확률적 토픽 분석)
     - Latent Semantic Indexing(LSI) 라고도 불리며, SVD(특이값 분해)를 활용해 문서에 함축된 주제를 찾아내는 것을 의미합니다
@@ -342,14 +340,12 @@ Feature Projection
 
 ### SVM은 왜 반대로 차원을 확장시키는 방식으로 동작할까요? SVM은 왜 좋을까요?
 
-<aside>
-💡 차원을 바라보는 두 가지 시각이 존재합니다. 하나는 차원을 낮춰서 문제를 단순화 시키고자 하는 것이고, 다른 하나는 차원을 추가함으로써 단순화 시키는 것입니다. 
-SVM에서는 현재 차원에서 데이터를 선형적으로 분류하기 힘든 경우에 데이터의 차원을 고차원으로 확장한 후 경계평면을 찾는 원리가 사용됩니다.
-단, 실제 입력 데이터를 연산을 통해 차원을 높이는 과정은 현실 데이터 특성 상 수 많은 연산량을 요구하기 때문에 Kernel Trick을 통해서 차원을 높이지 않고 margin을 극대화 하는 서포트 벡터를 구합니다.
+>💡 차원을 바라보는 두 가지 시각이 존재합니다. 하나는 차원을 낮춰서 문제를 단순화 시키고자 하는 것이고, 다른 하나는 차원을 추가함으로써 단순화 시키는 것입니다. 
+>SVM에서는 현재 차원에서 데이터를 선형적으로 분류하기 힘든 경우에 데이터의 차원을 고차원으로 확장한 후 경계평면을 찾는 원리가 사용됩니다.
+>단, 실제 입력 데이터를 연산을 통해 차원을 높이는 과정은 현실 데이터 특성 상 수 많은 연산량을 요구하기 때문에 Kernel Trick을 통해서 차원을 높이지 않고 margin을 극대화 하는 서포트 벡터를 구합니다.
+>
+>![Untitled](../img/ML/img17.png)
 
-![Untitled](../img/ML/img17.png)
-
-</aside>
 
 - 장점
     - 노이즈 데이터와 이상치를 잘 처리할 수 있습니다
