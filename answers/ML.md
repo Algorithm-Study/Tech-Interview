@@ -214,7 +214,6 @@ Feature Projection
 <center><img src="../img/ML/img13.png" width="70%" height="40%"></center>
 
 #### Reference
-
 - [11 Dimensionality reduction techniques you should know in 2021](https://towardsdatascience.com/11-dimensionality-reduction-techniques-you-should-know-in-2021-dcb9500d388b)
 - [What Is Dimensionality Reduction? Meaning, Techniques, and Examples](https://www.spiceworks.com/tech/artificial-intelligence/articles/what-is-dimensionality-reduction/)
 - [Applied Dimensionality Reduction — 3 Techniques using Python](https://www.learndatasci.com/tutorials/applied-dimensionality-reduction-techniques-using-python/)
@@ -230,7 +229,6 @@ Feature Projection
 <center><img src="../img/ML/img14.png" width="70%" height="40%"></center>
 
 #### Reference
-
 - [[선형대수학 #6] 주성분분석(PCA)의 이해와 활용](https://darkpgmr.tistory.com/110)
 - [[Machine learning] 차원축소, PCA, SVD, LSA, LDA, MF 간단정리 (day1 / 201009)](https://huidea.tistory.com/126)
 
@@ -299,10 +297,74 @@ Feature Projection
     - 이러한 정적 분포가 목표 분포(target distribution) p(x)가 되도록 Markov chain을 설정하는 것이 MCMC 접근법
 
 #### Reference
-
 - [Markov Chain Monte Carlo - 공돌이의 수학정리노트](https://angeloyeo.github.io/2020/09/17/MCMC.html)
 - [Markov Chain - MLWiki](https://sites.google.com/site/machlearnwiki/RBM/markov-chain)
 - [[Machine learning] Markov Chain, Gibbs Sampling, 마르코프 체인, 깁스 샘플링 (day2 / 201010)](https://huidea.tistory.com/128?category=879541)
 - [Markov Chain Explained](https://builtin.com/machine-learning/markov-chain)
 - [[강화학습] 마코프 프로세스(=마코프 체인) 제대로 이해하기](https://bskyvision.com/entry/%EB%A7%88%EC%BD%94%ED%94%84-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EB%A7%88%EC%BD%94%ED%94%84-%EC%B2%B4%EC%9D%B8%EB%9E%80)
 - [wikipedia - 마르코프_연쇄](https://ko.wikipedia.org/wiki/%EB%A7%88%EB%A5%B4%EC%BD%94%ED%94%84_%EC%97%B0%EC%87%84)
+
+---
+
+### 텍스트 더미에서 주제를 추출해야 합니다. 어떤 방식으로 접근해 나가시겠나요?
+
+<aside>
+💡 텍스트 데이터 내 단어들의 빈도를 통계적으로 분석하여 전체 데이터를 관통하는 잠재적 주제, 즉 토픽들을 자동으로 추출 분류할 수 있습니다. 이러한 방법론을 Topic Modeling이라고 합니다. Topic Modeling에는 Latent Semantic Analysis (LSA), Probabilistic LSA(pLSA), Latent Dirichlet Allocation(LDA), Correlated topic model(CTM), Structural topic model(STM) 등이 있습니다.
+</aside>
+
+- Latent Semantic Analysis(LSA, 비확률적 토픽 분석)
+    - Latent Semantic Indexing(LSI) 라고도 불리며, SVD(특이값 분해)를 활용해 문서에 함축된 주제를 찾아내는 것을 의미합니다
+    - LSA의 단점으로는 데이터에 내재된 오차를 컨트롤할 수 없고 의미공간의 가중치가 음수인 경우가 발생하여 해석이 어렵습니다
+- Probabilistic LSA(pLSA, 확률적 토픽 분석)
+    - pLSA는 단어가 등장 횟수 기반이 아닌 등장 확률을 기반으로 분석하는 방법입니다
+    - 단점으로는 LSA와 같이 단순하게 문헌-용어 행렬만 입력받기 때문에 문헌 내에 주제가 어떻게 분포하는가는 고려하지 않습니다
+- Latent Dirichlet Allocation(LDA, 잠재 디리클레 할당)
+    - LDA는 pLSA의 Bayesian 버전으로 토픽에 대한 사전확률분포로 Dirichlet prior를 이용합니다
+    - LDA는 pLSA의 단점을 보완하기 위해 문헌별 주제 분포와 주제별 단어 분포를 고려합니다
+    - LDA의 단점으로는 문서에 대한 토픽분포의 모수(토픽비율)를 디리클레분포로 생성하여 토픽간 연관성을 반영하지 못합니다
+- Correlated topic model(CTM, 상관 토픽 모델)
+    - CTM은 LDA의 확장 버전으로 토픽간 연관성을 나타내는 토픽비율을 다변량정규분포를 이용하여 2단계로 모형화 합니다
+- Structural topic model(STM, 구조 토픽 모델)
+    - STM은 LDA에서 토픽간의 연관성을 반영하지 못하는 단점을 보완하기 위한 방법입니다.
+    - STM은 관계 추정이 가능한 로지스틱 정규분포를 사용하게 됩니다.
+    - STM은 k개 주제들의 발생 확률을 종속변수로 설정하고 문서의 메타정보를 독립변수로 설정한 후 선형회귀모형으로 관계를 설명합니다.
+
+#### Reference
+- [Topic Modeling Using Python](https://heartbeat.comet.ml/topic-modeling-using-python-424e0f0621a0)****
+- [[ML] Topic Modeling(토픽 모델)인 LDA(Latent Dirichlet Allocation)](https://techblog-history-younghunjo1.tistory.com/87)
+- [잠재 디리클레 할당(Latent Dirichlet Allocation, LDA)](https://wikidocs.net/30708)
+- [#토픽분석이란](http://bigdata.dongguk.ac.kr/lectures/bigdata/_book/%EB%AC%B8%EC%84%9C%EC%9D%98-%EC%A3%BC%EC%A0%9C%EB%B6%84%EC%84%9D.html#%ED%86%A0%ED%94%BD%EB%B6%84%EC%84%9D%EC%9D%B4%EB%9E%80)
+- [텍스트마이닝 토픽모델, LDA(Latent Dirichlet Allocation)](https://alecompany.github.io/txtmining/txtMining-topic/)
+- [[토픽 모델링] LSA와 LDA의 관계 (+ LDA라는 이름의 유래)](https://bab2min.tistory.com/585)
+- [3:19 / 7:31   R을 활용한 고급통계 - (18) 구조적 토픽 모델링(STM)(Structural Topic Modeling)](https://www.youtube.com/watch?v=GGFNYJjjoSo&ab_channel=%ED%86%B5%EA%B3%84%ED%8C%8C%EB%9E%91)
+
+---
+
+### SVM은 왜 반대로 차원을 확장시키는 방식으로 동작할까요? SVM은 왜 좋을까요?
+
+<aside>
+💡 차원을 바라보는 두 가지 시각이 존재합니다. 하나는 차원을 낮춰서 문제를 단순화 시키고자 하는 것이고, 다른 하나는 차원을 추가함으로써 단순화 시키는 것입니다. 
+SVM에서는 현재 차원에서 데이터를 선형적으로 분류하기 힘든 경우에 데이터의 차원을 고차원으로 확장한 후 경계평면을 찾는 원리가 사용됩니다.
+단, 실제 입력 데이터를 연산을 통해 차원을 높이는 과정은 현실 데이터 특성 상 수 많은 연산량을 요구하기 때문에 Kernel Trick을 통해서 차원을 높이지 않고 margin을 극대화 하는 서포트 벡터를 구합니다.
+
+![Untitled](../img/ML/img17.png)
+
+</aside>
+
+- 장점
+    - 노이즈 데이터와 이상치를 잘 처리할 수 있습니다
+    - 선형 분리가 불가해 보이는 것도 고차원 매핑을 통해 분리가 가능합니다
+    - 고차원에서도 효과적이라고 알려져 있으며 local optimum에 빠질 수 있는 딥러닝 방식과는 달리 SVM은 global optimum을 찾습니다
+    - model-based-learning으로 모델이 구축된 후엔 새로운 데이터에 대한 예측 및 분류 속도가 상대적으로 빠릅니다
+- 단점
+    - 분류 클래스가 여러 개가 되면 분류를 해야하는 경우의 수가 많아지기 때문에 모델을 구축하는데 시간이 오래 걸립니다
+    - 최적 파라미터를 찾는 과정을 거치기 때문에 모형 구축 시간이 오래 걸릴 수 있습니다
+    - 결과에 대한 설명력이 떨어집니다
+
+#### Reference
+- [The Kernel Trick in Support Vector Classification](https://towardsdatascience.com/the-kernel-trick-c98cdbcaeb3f)
+- [ML #8: 머신러닝 SVM 기본 개념과 장단점](https://muzukphysics.tistory.com/entry/ML-8-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-SVM-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9E%A5%EB%8B%A8%EC%A0%90-Support-Vector-Machine)
+- [차원의 문제 - 다크 프로그래머](https://darkpgmr.tistory.com/145)
+- [문과생도 이해하는 SVM(support vector machine)](https://binggre.tistory.com/m/1)
+- [Kernel-SVM](https://ratsgo.github.io/machine%20learning/2017/05/30/SVM3/)
+- [Support Vector Machine (SVM, 서포트 벡터 머신)](https://excelsior-cjh.tistory.com/66)
