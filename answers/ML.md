@@ -340,8 +340,8 @@ Feature Projection
 
 ### SVM은 왜 반대로 차원을 확장시키는 방식으로 동작할까요? SVM은 왜 좋을까요?
 
->💡 차원을 바라보는 두 가지 시각이 존재합니다. 하나는 차원을 낮춰서 문제를 단순화 시키고자 하는 것이고, 다른 하나는 차원을 추가함으로써 단순화 시키는 것입니다. 
->SVM에서는 현재 차원에서 데이터를 선형적으로 분류하기 힘든 경우에 데이터의 차원을 고차원으로 확장한 후 경계평면을 찾는 원리가 사용됩니다.
+>💡 차원을 바라보는 두 가지 시각이 존재합니다. 하나는 차원을 낮춰서 문제를 단순화 시키고자 하는 것이고, 다른 하나는 차원을 추가함으로써 단순화 시키는 것입니다.<br>
+>SVM에서는 현재 차원에서 데이터를 선형적으로 분류하기 힘든 경우에 데이터의 차원을 고차원으로 확장한 후 경계평면을 찾는 원리가 사용됩니다.<br>
 >단, 실제 입력 데이터를 연산을 통해 차원을 높이는 과정은 현실 데이터 특성 상 수 많은 연산량을 요구하기 때문에 Kernel Trick을 통해서 차원을 높이지 않고 margin을 극대화 하는 서포트 벡터를 구합니다.
 >
 >![Untitled](../img/ML/img17.png)
@@ -364,3 +364,59 @@ Feature Projection
 - [문과생도 이해하는 SVM(support vector machine)](https://binggre.tistory.com/m/1)
 - [Kernel-SVM](https://ratsgo.github.io/machine%20learning/2017/05/30/SVM3/)
 - [Support Vector Machine (SVM, 서포트 벡터 머신)](https://excelsior-cjh.tistory.com/66)
+
+---
+
+### 다른 좋은 머신 러닝 대비, 오래된 기법인 나이브 베이즈(naive bayes)의 장점을 옹호해보세요.
+
+>💡 **나이브 베이즈의 장점**<br>
+>- 조건부 확률(우도, 사후확률)만 계산하기 때문에 계산량이 적어서 빠르게 동작<br>
+>- 노이즈 및 결측 데이터에 강인 함<br>
+>- 각 피쳐들이 독립인 경우 다른 모델 대비 적은 데이터로 성능이 잘 나옴<br>
+>- 멀티 클래스, 카테고리형 입력 데이터로 학습할 경우 적합<br>
+
+- Naive Bayes 활용
+    - 스팸 필터링
+    - 비정상적인 상황 감지
+
+#### Reference
+- [쉽고 강력한 머신러닝, 나이브 베이즈 분류 (Naive Bayes Classification)](https://needjarvis.tistory.com/621)
+- [데이터마이닝_확률기반 기계학습_나이브 베이즈](https://swingswing.tistory.com/148)
+- [나이브 베이즈 분류기 (Naive Bayes Classifier)](https://mole-starseeker.tistory.com/78)
+- [Naive Bayes Explained: Function, Advantages & Disadvantages, Applications in 2023](https://www.upgrad.com/blog/naive-bayes-explained/)
+
+---
+
+### 회귀 / 분류시 알맞은 metric은 무엇일까?
+
+>💡 적절한 Metric
+> - 회귀: 연속적인 값을 예측하기 때문에 실제 값과 예측하는 값의 차이에 기반을 둔 Metric을 사용합니다.  RSS(단순 오차 제곱 합), MSE(평균 제곱 오차), MAE(평균 절대값 오차), $R^2$(Coefficient of Determination 결정계수)<br>
+> - 분류: 이산적인 값을 예측하기 때문에 값 클래스를 잘 예측했는지를 판별할 수 있는 Metric을 활용합니다. Confusion matrix를 활용한 accuracy, precision, recall, F1-score, ROC curve 등이 있습니다.
+
+- 회귀 Metric
+    - MAE (예측 변수의 분포가 가우시안일 경우 유리)<br>
+    :실제 값과 예측 값의 차이를 절댓값으로 취한 값의 평균입니다. MSE와 비슷한 역할을 하지만, 이상치(outlier)에 덜 민감하고 해석하기 쉽다는 장점이 있습니다.
+    - MSE(입력 데이터에 아웃라이어가 많은 경우 유리)<br>
+    :실제 값과 예측 값의 차이를 제곱한 값의 평균입니다. 회귀 모델에서 가장 널리 사용되는 metric 중 하나입니다. MSE가 작을수록 모델의 예측이 정확하다는 것을 의미합니다.
+    - $R^2$<br>
+    :실제 값의 분산 중 모델로 설명 가능한 부분의 분산의 비율입니다. 즉, 모델이 전체 분산 중 얼마나 설명할 수 있는지를 나타내는 지표입니다. R²가 1에 가까울수록 모델의 예측이 높은 정확도를 가집니다.
+- 분류 Metric
+    - Accuracy (데이터가 불균형한 경우 잘 작동하지 않음)<br>
+    : 전체 샘플 중에서 모델이 정확하게 예측한 샘플의 비율입니다. 높을수록 좋은 모형입니다. 이진 분류와 다중 분류 문제에서 모두 사용할 수 있습니다.
+    - Precision (FP가 중요한 문제에서 활용)<br>
+    : 모델이 Positive로 예측한 샘플 중에서 실제로 Positive인 샘플의 비율입니다. 즉, 모델이 Positive로 예측한 것 중에서 얼마나 맞았는지를 나타내는 지표입니다.
+    - Recall (FN이 중요한 문제에서 활용)<br>
+    : 실제 Positive인 샘플 중에서 모델이 Positive로 예측한 샘플의 비율입니다. 즉, 모델이 실제 Positive인 것을 얼마나 잘 찾아냈는지를 나타내는 지표입니다.
+    - F1 Score<br>
+    : 정밀도와 재현율의 조화 평균입니다. 불균형한 데이터셋에서 사용됩니다. 정밀도와 재현율을 모두 고려하여 모델의 성능을 평가하는 지표입니다.
+    - AUC ROC (멀티 클래스 문제 시각화에 유용)<br>
+    : 분류 모델의 성능을 시각적으로 평가하는 방법 중 하나입니다. ROC 곡선은 FPR(False Positive Rate)을 x축으로, TPR(True Positive Rate)을 y축으로 나타내며, 분류 모델의 임계값(threshold)을 변경하면서 TPR과 FPR의 변화를 나타냅니다.
+    분류 모델의 임계값이 높을수록 TPR은 낮아지고, FPR은 높아집니다. 반대로 임계값이 낮을수록 TPR은 높아지고, FPR은 낮아집니다. ROC 곡선에서 좌측 상단에 가까울수록 모델의 성능이 높다는 것을 의미합니다. 이때 ROC 곡선 아래쪽 면적을 AUC(Area Under the Curve)라고 하며, AUC가 1에 가까울수록 모델의 성능이 높다는 것을 나타냅니다.
+
+#### Reference
+- [회귀 / 분류시 알맞은 metric과 그에 대한 설명](https://mole-starseeker.tistory.com/30)
+- [회귀 모형의 평가 지표](http://ds.sumeun.org/?p=2190)
+- [5.4 분류 성능평가](https://datascienceschool.net/03%20machine%20learning/09.04%20%EB%B6%84%EB%A5%98%20%EC%84%B1%EB%8A%A5%ED%8F%89%EA%B0%80.html)
+- [Metrics to Evaluate Classification and Regression Algorithms](https://medium.com/@poojitha.penmethsa/metrics-to-evaluate-classification-and-regression-algorithms-1554f1e00a75)
+
+---
